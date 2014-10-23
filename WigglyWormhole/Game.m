@@ -65,7 +65,7 @@
     NSLog(@"direction:%d",_wormDirection);
     switch (_wormDirection) {
         case UP:
-            _wormPosY-=_wormSpeed;
+            [self isYOnTrack:_wormPosY]?(_wormPosY-=_wormSpeed):0;
             break;
         case DOWN:
             _wormPosY+=_wormSpeed;
