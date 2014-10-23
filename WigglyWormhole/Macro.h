@@ -19,6 +19,13 @@
 #define SCENE_CELLS_X 14
 #define SCENE_CELLS_Y 20
 
+//direction
+#define UP 0
+#define LEFT 1
+#define RIGHT 2
+#define DOWN 3
+#define SPEED 1
+
 #define RAND_FROM_TO(min, max) (min + arc4random_uniform(max - min + 1))
 
 

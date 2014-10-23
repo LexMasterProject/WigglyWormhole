@@ -41,6 +41,7 @@
     _gameScene.backgroundColor=[UIColor whiteColor];
     
     [self.view addSubview:_gameScene];
+    _nsTimer=[NSTimer scheduledTimerWithTimeInterval:0.2 target:_game selector:@selector(update) userInfo:nil repeats:true];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,19 +50,18 @@
 }
 
 - (IBAction)pressUp:(id)sender {
-    NSLog(@"up pressed");
-    
+    [self.game wormUp];
 }
 - (IBAction)pressRight:(id)sender {
-     NSLog(@"right pressed");
+     [self.game wormRight];
 }
 
 - (IBAction)pressDown:(id)sender {
-     NSLog(@"down pressed");
+    [self.game wormDown];
 }
 
 - (IBAction)pressLeft:(id)sender {
-     NSLog(@"left pressed");
+    [self.game wormLeft];
 }
 
 - (IBAction)updateMapTest:(id)sender {

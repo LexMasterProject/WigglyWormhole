@@ -14,6 +14,8 @@
 
 @property (strong) UIImage*land;
 @property (strong) WormView*wormView;
+@property (assign) int wormPosx;
+@property (assign) int wormPosy;
 
 
 @end

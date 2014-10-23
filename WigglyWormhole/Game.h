@@ -13,6 +13,17 @@
 
 @property (strong) NSString*title;
 @property (assign) int score;
+@property (assign) int wormSpeed;
+@property (assign) int wormDirection;
+@property (assign) int wormPosX;
+@property (assign) int wormPosY;
+
+-(void)update;
+-(void)wormDown;
+-(void)wormUp;
+-(void)wormLeft;
+-(void)wormRight;
+
 
 
 @end

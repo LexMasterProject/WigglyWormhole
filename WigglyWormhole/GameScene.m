@@ -46,7 +46,10 @@
     return self;
 }
 
-
+-(void) drawWorm
+{
+    _wormView.center=CGPointMake(_wormPosx, _wormPosy);
+}
 - (void)drawLand
 {
     
@@ -58,12 +61,14 @@
         }
     }
     
+    
    
 }
 
 - (void)drawRect:(CGRect)rect
 {
     [self drawLand];
+    [self drawWorm];
 }
 
 

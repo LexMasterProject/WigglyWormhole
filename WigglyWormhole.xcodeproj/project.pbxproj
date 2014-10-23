@@ -103,13 +103,15 @@
 		FA290F0419F5F586000C7420 /* WigglyWormhole */ = {
 			isa = PBXGroup;
 			children = (
+				FA290F3219F5F607000C7420 /* Game.m */,
+				FA290F3119F5F607000C7420 /* Game.h */,
+				FA290F0A19F5F586000C7420 /* AppDelegate.m */,
 				FA28EBD519F602A600026354 /* Macro.h */,
 				FA357E7619F9810800012A2B /* WormView.h */,
 				FA357E7419F9810200012A2B /* WormView.m */,
 				FA2539F319F673A30016F4FD /* GameScene.h */,
 				FA2539F419F673A30016F4FD /* GameScene.m */,
 				FA290F0919F5F586000C7420 /* AppDelegate.h */,
-				FA290F0A19F5F586000C7420 /* AppDelegate.m */,
 				FA290F0F19F5F586000C7420 /* ViewController.h */,
 				FA290F1019F5F586000C7420 /* ViewController.m */,
 				FA290F1219F5F586000C7420 /* Main.storyboard */,
@@ -117,8 +119,6 @@
 				FA290F1719F5F586000C7420 /* LaunchScreen.xib */,
 				FA290F0C19F5F586000C7420 /* WigglyWormhole.xcdatamodeld */,
 				FA290F0519F5F586000C7420 /* Supporting Files */,
-				FA290F3119F5F607000C7420 /* Game.h */,
-				FA290F3219F5F607000C7420 /* Game.m */,
 			);
 			path = WigglyWormhole;
 			sourceTree = "<group>";
