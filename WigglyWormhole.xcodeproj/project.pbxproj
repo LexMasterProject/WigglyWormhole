@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA2539F519F673A30016F4FD /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2539F419F673A30016F4FD /* GameScene.m */; };
+		FA28EBD719F604D000026354 /* emptycell.png in Resources */ = {isa = PBXBuildFile; fileRef = FA28EBD619F604D000026354 /* emptycell.png */; };
+		FA28EBD919F604D600026354 /* shroomcell.png in Resources */ = {isa = PBXBuildFile; fileRef = FA28EBD819F604D600026354 /* shroomcell.png */; };
+		FA28EBDB19F604DF00026354 /* snakecell.png in Resources */ = {isa = PBXBuildFile; fileRef = FA28EBDA19F604DF00026354 /* snakecell.png */; };
+		FA28EBDD19F604E300026354 /* wormface.png in Resources */ = {isa = PBXBuildFile; fileRef = FA28EBDC19F604E300026354 /* wormface.png */; };
+		FA28EBDF19F604E700026354 /* wormholecell.png in Resources */ = {isa = PBXBuildFile; fileRef = FA28EBDE19F604E700026354 /* wormholecell.png */; };
 		FA290F0819F5F586000C7420 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA290F0719F5F586000C7420 /* main.m */; };
 		FA290F0B19F5F586000C7420 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA290F0A19F5F586000C7420 /* AppDelegate.m */; };
 		FA290F0E19F5F586000C7420 /* WigglyWormhole.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA290F0C19F5F586000C7420 /* WigglyWormhole.xcdatamodeld */; };
@@ -15,6 +21,8 @@
 		FA290F1619F5F586000C7420 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA290F1519F5F586000C7420 /* Images.xcassets */; };
 		FA290F1919F5F586000C7420 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA290F1719F5F586000C7420 /* LaunchScreen.xib */; };
 		FA290F2519F5F586000C7420 /* WigglyWormholeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA290F2419F5F586000C7420 /* WigglyWormholeTests.m */; };
+		FA290F3319F5F607000C7420 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = FA290F3219F5F607000C7420 /* Game.m */; };
+		FA357E7519F9810200012A2B /* WormView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA357E7419F9810200012A2B /* WormView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +36,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA2539F319F673A30016F4FD /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		FA2539F419F673A30016F4FD /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		FA28EBD519F602A600026354 /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		FA28EBD619F604D000026354 /* emptycell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptycell.png; sourceTree = "<group>"; };
+		FA28EBD819F604D600026354 /* shroomcell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shroomcell.png; sourceTree = "<group>"; };
+		FA28EBDA19F604DF00026354 /* snakecell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snakecell.png; sourceTree = "<group>"; };
+		FA28EBDC19F604E300026354 /* wormface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wormface.png; sourceTree = "<group>"; };
+		FA28EBDE19F604E700026354 /* wormholecell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wormholecell.png; sourceTree = "<group>"; };
 		FA290F0219F5F586000C7420 /* WigglyWormhole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WigglyWormhole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA290F0619F5F586000C7420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA290F0719F5F586000C7420 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -42,6 +58,10 @@
 		FA290F1E19F5F586000C7420 /* WigglyWormholeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WigglyWormholeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA290F2319F5F586000C7420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA290F2419F5F586000C7420 /* WigglyWormholeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WigglyWormholeTests.m; sourceTree = "<group>"; };
+		FA290F3119F5F607000C7420 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		FA290F3219F5F607000C7420 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		FA357E7419F9810200012A2B /* WormView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WormView.m; sourceTree = "<group>"; };
+		FA357E7619F9810800012A2B /* WormView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WormView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +103,11 @@
 		FA290F0419F5F586000C7420 /* WigglyWormhole */ = {
 			isa = PBXGroup;
 			children = (
+				FA28EBD519F602A600026354 /* Macro.h */,
+				FA357E7619F9810800012A2B /* WormView.h */,
+				FA357E7419F9810200012A2B /* WormView.m */,
+				FA2539F319F673A30016F4FD /* GameScene.h */,
+				FA2539F419F673A30016F4FD /* GameScene.m */,
 				FA290F0919F5F586000C7420 /* AppDelegate.h */,
 				FA290F0A19F5F586000C7420 /* AppDelegate.m */,
 				FA290F0F19F5F586000C7420 /* ViewController.h */,
@@ -92,6 +117,8 @@
 				FA290F1719F5F586000C7420 /* LaunchScreen.xib */,
 				FA290F0C19F5F586000C7420 /* WigglyWormhole.xcdatamodeld */,
 				FA290F0519F5F586000C7420 /* Supporting Files */,
+				FA290F3119F5F607000C7420 /* Game.h */,
+				FA290F3219F5F607000C7420 /* Game.m */,
 			);
 			path = WigglyWormhole;
 			sourceTree = "<group>";
@@ -99,6 +126,11 @@
 		FA290F0519F5F586000C7420 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA28EBDE19F604E700026354 /* wormholecell.png */,
+				FA28EBDC19F604E300026354 /* wormface.png */,
+				FA28EBDA19F604DF00026354 /* snakecell.png */,
+				FA28EBD819F604D600026354 /* shroomcell.png */,
+				FA28EBD619F604D000026354 /* emptycell.png */,
 				FA290F0619F5F586000C7420 /* Info.plist */,
 				FA290F0719F5F586000C7420 /* main.m */,
 			);
@@ -202,9 +234,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA28EBDF19F604E700026354 /* wormholecell.png in Resources */,
+				FA28EBDD19F604E300026354 /* wormface.png in Resources */,
+				FA28EBDB19F604DF00026354 /* snakecell.png in Resources */,
 				FA290F1419F5F586000C7420 /* Main.storyboard in Resources */,
 				FA290F1919F5F586000C7420 /* LaunchScreen.xib in Resources */,
+				FA28EBD919F604D600026354 /* shroomcell.png in Resources */,
 				FA290F1619F5F586000C7420 /* Images.xcassets in Resources */,
+				FA28EBD719F604D000026354 /* emptycell.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,10 +259,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA290F3319F5F607000C7420 /* Game.m in Sources */,
+				FA2539F519F673A30016F4FD /* GameScene.m in Sources */,
 				FA290F0B19F5F586000C7420 /* AppDelegate.m in Sources */,
 				FA290F0E19F5F586000C7420 /* WigglyWormhole.xcdatamodeld in Sources */,
 				FA290F1119F5F586000C7420 /* ViewController.m in Sources */,
 				FA290F0819F5F586000C7420 /* main.m in Sources */,
+				FA357E7519F9810200012A2B /* WormView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +456,7 @@
 				FA290F2A19F5F586000C7420 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA290F2B19F5F586000C7420 /* Build configuration list for PBXNativeTarget "WigglyWormholeTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +465,7 @@
 				FA290F2D19F5F586000C7420 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

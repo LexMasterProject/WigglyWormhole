@@ -7,8 +7,30 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Game.h"
+#import "GameScene.h"
 
 @interface ViewController : UIViewController
+
+@property (strong)Game*game;
+@property (strong) GameScene*gameScene;
+
+
+
+@property (weak, nonatomic) IBOutlet UILabel *uiGameTitle;
+
+@property (weak, nonatomic) IBOutlet UILabel *uiGameScore;
+
+- (IBAction)pressUp:(id)sender;
+
+- (IBAction)pressRight:(id)sender;
+
+- (IBAction)pressDown:(id)sender;
+
+- (IBAction)pressLeft:(id)sender;
+
+- (IBAction)updateMapTest:(id)sender;
+
 
 
 @end
