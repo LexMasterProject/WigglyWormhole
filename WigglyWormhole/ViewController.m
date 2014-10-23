@@ -41,14 +41,21 @@
     _gameScene.backgroundColor=[UIColor whiteColor];
     
     [self.view addSubview:_gameScene];
-    _nsTimer=[NSTimer scheduledTimerWithTimeInterval:0.2 target:_game selector:@selector(update) userInfo:nil repeats:true];
+    _nsTimer=[NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(update) userInfo:nil repeats:true];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)update
+{
+    [self.game update];
+    self.gameScene.wormPosx=self.game.wormPosX;
+    self.gameScene.wormPosy=self.game.wormPosY;
+    [self.gameScene setNeedsDisplay];
+    
+}
 - (IBAction)pressUp:(id)sender {
     [self.game wormUp];
 }
