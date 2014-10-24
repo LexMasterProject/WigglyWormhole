@@ -29,6 +29,18 @@
 
 -(void)moveDown
 {
-    self.center=CGPointMake(RAND_FROM_TO(0, 300), RAND_FROM_TO(0, 300));
+    self.center=CGPointMake(self.center.x,SCENE_HEIGHT-10);
+}
+-(void)moveUp
+{
+     self.center=CGPointMake(self.center.x,10);
+}
+-(void)moveLeft
+{
+    self.center=CGPointMake(10,self.center.y);
+}
+-(void)moveRight
+{
+       self.center=CGPointMake(SCENE_WIDTH-10,self.center.y);
 }
 @end

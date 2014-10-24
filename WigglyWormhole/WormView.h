@@ -11,6 +11,9 @@
 @interface WormView : UIImageView
 
 -(void)moveDown;
+-(void)moveUp;
+-(void)moveLeft;
+-(void)moveRight;
 
 @property (strong)UIImage*wormImage;
 

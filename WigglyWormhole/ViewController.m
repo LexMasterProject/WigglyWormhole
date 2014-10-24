@@ -51,32 +51,46 @@
 -(void)update
 {
     [self.game update];
-    self.gameScene.wormPosx=self.game.wormPosX;
-    self.gameScene.wormPosy=self.game.wormPosY;
-    [self.gameScene setNeedsDisplay];
+   // self.gameScene.wormPosx=self.game.wormPosX;
+  //  self.gameScene.wormPosy=self.game.wormPosY;
+   // [self.gameScene setNeedsDisplay];
     
 }
 - (IBAction)pressUp:(id)sender {
     [self.game wormUp];
+    [UIView beginAnimations:@"movingspookily" context:nil];
+    [UIView setAnimationDuration:5];
+    [self.gameScene.wormView moveUp];
+    [UIView commitAnimations];
 }
 - (IBAction)pressRight:(id)sender {
      [self.game wormRight];
+    [UIView beginAnimations:@"movingspookily" context:nil];
+    [UIView setAnimationDuration:5];
+    [self.gameScene.wormView moveRight];
+    [UIView commitAnimations];
 }
 
 - (IBAction)pressDown:(id)sender {
     [self.game wormDown];
-}
-
-- (IBAction)pressLeft:(id)sender {
-    [self.game wormLeft];
-}
-
-- (IBAction)updateMapTest:(id)sender {
-    NSLog(@"update map test");
+    //todo
     [UIView beginAnimations:@"movingspookily" context:nil];
     [UIView setAnimationDuration:5];
     [self.gameScene.wormView moveDown];
     [UIView commitAnimations];
+}
+
+- (IBAction)pressLeft:(id)sender {
+    [self.game wormLeft];
+    [UIView beginAnimations:@"movingspookily" context:nil];
+    [UIView setAnimationDuration:5];
+    [self.gameScene.wormView moveLeft];
+    [UIView commitAnimations];
+}
+
+- (IBAction)updateMapTest:(id)sender {
+    NSLog(@"update map test");
+ 
   
 }
 @end

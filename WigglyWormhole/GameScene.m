@@ -68,7 +68,7 @@
 - (void)drawRect:(CGRect)rect
 {
     [self drawLand];
-    [self drawWorm];
+    //[self drawWorm];
 }
 
 
