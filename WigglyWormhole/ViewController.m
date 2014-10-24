@@ -90,6 +90,16 @@
 
 - (IBAction)updateMapTest:(id)sender {
     NSLog(@"update map test");
+    if (self.gameScene.wormView.alpha) {
+        [UIView animateWithDuration:2 animations:^{
+            self.gameScene.wormView.alpha=0.0;
+        }];
+    }else
+    {
+    [UIView animateWithDuration:2 animations:^{
+        self.gameScene.wormView.alpha=1;
+    }];
+    }
  
   
 }
