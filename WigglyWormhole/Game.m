@@ -27,7 +27,7 @@
         _title=GAME_TITLE;
         _score=0;
         _wormDirection=DOWN;
-        _wormSpeed=SPEED+5;
+        _wormSpeed=2;
         _wormPosX=10+SCENE_WIDTH/2;
         _wormPosY=-10+SCENE_HEIGHT/2;
         
@@ -74,7 +74,7 @@
             _wormPosX+=_wormSpeed;
             break;
         case LEFT:
-            _wormPosX-=_wormSpeed;
+            [self isXOnTrack:_wormPosX]==1?(_wormPosX-=_wormSpeed):0;
             break;
         default:
             break;
