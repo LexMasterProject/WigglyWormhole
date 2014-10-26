@@ -62,24 +62,7 @@
 
 -(void)update
 {
-    NSLog(@"direction:%d",_wormDirection);
-    switch (_wormDirection) {
-        case UP:
-            _wormPosY-=_wormSpeed;
-            break;
-        case DOWN:
-            _wormPosY+=_wormSpeed;
-            break;
-        case RIGHT:
-            _wormPosX+=_wormSpeed;
-            break;
-        case LEFT:
-            [self isXOnTrack:_wormPosX]==1?(_wormPosX-=_wormSpeed):0;
-            break;
-        default:
-            break;
-    }
-    NSLog(@"x:%d,y:%d:",_wormPosX,_wormPosY);
+    NSLog(@"worm (x:%d,y:%d)",_wormPosX,_wormPosY);
 }
 
 -(void)wormDown
