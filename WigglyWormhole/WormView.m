@@ -50,4 +50,12 @@
 {
        self.center=CGPointMake(SCENE_WIDTH-10,self.center.y);
 }
+-(int)getPosX
+{
+    return [self.layer.presentationLayer frame].origin.x+10;
+}
+-(int)getPosY
+{
+     return [self.layer.presentationLayer frame].origin.y+10;
+}
 @end

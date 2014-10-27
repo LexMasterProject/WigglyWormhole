@@ -56,15 +56,12 @@
 }
 -(void)update
 {
-    self.game.wormPosX=self.gameScene.wormView.center.x;
-    /*
-    if(self.gameScene.wormView.layer&&self.gameScene.wormView.layer.presentationLayer)
-    {
-    self.game.wormPosY=[self.gameScene.wormView.layer.presentationLayer center].y;
-    }
-     */
-    self.game.wormPosY=self.gameScene.wormView.center.y;
+   
+  
+    self.game.wormPosX=[self.gameScene.wormView getPosX];
+    self.game.wormPosY=[self.gameScene.wormView getPosY];
     [self.game update];
+    
    // self.gameScene.wormPosx=self.game.wormPosX;
   //  self.gameScene.wormPosy=self.game.wormPosY;
    // [self.gameScene setNeedsDisplay];
