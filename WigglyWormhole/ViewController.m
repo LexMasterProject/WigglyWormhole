@@ -71,7 +71,8 @@
 - (IBAction)pressUp:(id)sender {
     [self.game wormUp];
     [self.gameScene.wormView pause];
-    [UIView animateWithDuration:5 delay:0 options:ANIMATION_WORM_OPTIONS
+    double length=self.gameScene.wormView.getPosY-10;
+    [UIView animateWithDuration:length/self.game.wormSpeed delay:0 options:ANIMATION_WORM_OPTIONS
                      animations:^{
                            [self.gameScene.wormView moveUp];
                      } completion:^(BOOL finished) {
@@ -81,7 +82,8 @@
 - (IBAction)pressRight:(id)sender {
     [self.game wormRight];
     [self.gameScene.wormView pause];
-    [UIView animateWithDuration:5 delay:0 options:ANIMATION_WORM_OPTIONS
+    double length=SCENE_WIDTH-self.gameScene.wormView.getPosX-10;
+    [UIView animateWithDuration:length/self.game.wormSpeed delay:0 options:ANIMATION_WORM_OPTIONS
                      animations:^{
                          [self.gameScene.wormView moveRight];
                      } completion:^(BOOL finished) {
@@ -92,7 +94,8 @@
 - (IBAction)pressDown:(id)sender {
     [self.game wormDown];
     [self.gameScene.wormView pause];
-    [UIView animateWithDuration:5 delay:0 options:ANIMATION_WORM_OPTIONS
+    double length=SCENE_HEIGHT-self.gameScene.wormView.getPosY-10;
+    [UIView animateWithDuration:length/self.game.wormSpeed delay:0 options:ANIMATION_WORM_OPTIONS
                      animations:^{
                          [self.gameScene.wormView moveDown];
                      } completion:^(BOOL finished) {
@@ -103,7 +106,8 @@
 - (IBAction)pressLeft:(id)sender {
     [self.game wormLeft];
     [self.gameScene.wormView pause];
-    [UIView animateWithDuration:5 delay:0 options:ANIMATION_WORM_OPTIONS
+    double length=self.gameScene.wormView.getPosX-10;
+    [UIView animateWithDuration:length/self.game.wormSpeed delay:0 options:ANIMATION_WORM_OPTIONS
                      animations:^{
                          [self.gameScene.wormView moveLeft];
                      } completion:^(BOOL finished) {

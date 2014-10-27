@@ -27,7 +27,7 @@
         _title=GAME_TITLE;
         _score=0;
         _wormDirection=DOWN;
-        _wormSpeed=2;
+        _wormSpeed=35;
         _wormPosX=10+SCENE_WIDTH/2;
         _wormPosY=-10+SCENE_HEIGHT/2;
         
