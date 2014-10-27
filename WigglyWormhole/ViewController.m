@@ -64,36 +64,47 @@
    // [self.gameScene setNeedsDisplay];
     
 }
+//#define ANIMATION_WORM_OPTIONS (UIViewAnimationOptionCurveLinear|UIViewAnimationOptionBeginFromCurrentState)
 - (IBAction)pressUp:(id)sender {
     [self.game wormUp];
-    [UIView beginAnimations:@"movingspookily" context:nil];
-    [UIView setAnimationDuration:5];
-    [self.gameScene.wormView moveUp];
-    [UIView commitAnimations];
+    
+    [self.gameScene.wormView.layer removeAllAnimations];
+    [UIView animateWithDuration:5 delay:0 options:ANIMATION_WORM_OPTIONS
+                     animations:^{
+                           [self.gameScene.wormView moveUp];
+                     } completion:^(BOOL finished) {
+                         
+                     }];
 }
 - (IBAction)pressRight:(id)sender {
      [self.game wormRight];
-    [UIView beginAnimations:@"movingspookily" context:nil];
-    [UIView setAnimationDuration:5];
-    [self.gameScene.wormView moveRight];
-    [UIView commitAnimations];
+    [UIView animateWithDuration:5 delay:0 options:ANIMATION_WORM_OPTIONS
+                     animations:^{
+                         [self.gameScene.wormView moveRight];
+                     } completion:^(BOOL finished) {
+                         
+                     }];
 }
 
 - (IBAction)pressDown:(id)sender {
     [self.game wormDown];
     //todo
-    [UIView beginAnimations:@"movingspookily" context:nil];
-    [UIView setAnimationDuration:5];
-    [self.gameScene.wormView moveDown];
-    [UIView commitAnimations];
+    [UIView animateWithDuration:5 delay:0 options:ANIMATION_WORM_OPTIONS
+                     animations:^{
+                         [self.gameScene.wormView moveDown];
+                     } completion:^(BOOL finished) {
+                         
+                     }];
 }
 
 - (IBAction)pressLeft:(id)sender {
     [self.game wormLeft];
-    [UIView beginAnimations:@"movingspookily" context:nil];
-    [UIView setAnimationDuration:5];
-    [self.gameScene.wormView moveLeft];
-    [UIView commitAnimations];
+    [UIView animateWithDuration:5 delay:0 options:ANIMATION_WORM_OPTIONS
+                     animations:^{
+                         [self.gameScene.wormView moveLeft];
+                     } completion:^(BOOL finished) {
+                         
+                     }];
 }
 
 - (IBAction)updateMapTest:(id)sender {

@@ -17,7 +17,9 @@
 {
     self=[super initWithFrame:frame];
     if (self) {
-        _land=[UIImage imageNamed:@"emptycell.png"];
+        
+        //load images
+        _landImage=[UIImage imageNamed:@"emptycell.png"];
       
         
        
@@ -31,7 +33,7 @@
         
        
         NSLog(@"loaded image");
-        NSLog(@"%f",self.land.size.width);
+        NSLog(@"%f",self.landImage.size.width);
         /*
         [UIView beginAnimations:@"start moving" context:nil];
         [self.wormView moveDown];
@@ -57,7 +59,7 @@
     {
         for (int j=0; j<SCENE_CELLS_Y; j++) {
             
-            [self.land drawAtPoint:CGPointMake(i*CELL_SIZE, j*CELL_SIZE)];
+            [self.landImage drawAtPoint:CGPointMake(i*CELL_SIZE, j*CELL_SIZE)];
         }
     }
     
