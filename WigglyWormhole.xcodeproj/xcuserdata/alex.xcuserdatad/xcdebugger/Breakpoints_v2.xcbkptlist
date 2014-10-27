@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WigglyWormhole/ViewController.m"
-            timestampString = "436058944.738555"
+            timestampString = "436113080.975462"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "-pressUp:"
             landmarkType = "5">
          </BreakpointContent>

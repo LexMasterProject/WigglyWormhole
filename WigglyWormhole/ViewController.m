@@ -57,6 +57,12 @@
 -(void)update
 {
     self.game.wormPosX=self.gameScene.wormView.center.x;
+    /*
+    if(self.gameScene.wormView.layer&&self.gameScene.wormView.layer.presentationLayer)
+    {
+    self.game.wormPosY=[self.gameScene.wormView.layer.presentationLayer center].y;
+    }
+     */
     self.game.wormPosY=self.gameScene.wormView.center.y;
     [self.game update];
    // self.gameScene.wormPosx=self.game.wormPosX;
@@ -67,8 +73,7 @@
 //#define ANIMATION_WORM_OPTIONS (UIViewAnimationOptionCurveLinear|UIViewAnimationOptionBeginFromCurrentState)
 - (IBAction)pressUp:(id)sender {
     [self.game wormUp];
-    
-    [self.gameScene.wormView.layer removeAllAnimations];
+    [self.gameScene.wormView pause];
     [UIView animateWithDuration:5 delay:0 options:ANIMATION_WORM_OPTIONS
                      animations:^{
                            [self.gameScene.wormView moveUp];
@@ -77,7 +82,8 @@
                      }];
 }
 - (IBAction)pressRight:(id)sender {
-     [self.game wormRight];
+    [self.game wormRight];
+    [self.gameScene.wormView pause];
     [UIView animateWithDuration:5 delay:0 options:ANIMATION_WORM_OPTIONS
                      animations:^{
                          [self.gameScene.wormView moveRight];
@@ -88,7 +94,7 @@
 
 - (IBAction)pressDown:(id)sender {
     [self.game wormDown];
-    //todo
+    [self.gameScene.wormView pause];
     [UIView animateWithDuration:5 delay:0 options:ANIMATION_WORM_OPTIONS
                      animations:^{
                          [self.gameScene.wormView moveDown];
@@ -99,6 +105,7 @@
 
 - (IBAction)pressLeft:(id)sender {
     [self.game wormLeft];
+    [self.gameScene.wormView pause];
     [UIView animateWithDuration:5 delay:0 options:ANIMATION_WORM_OPTIONS
                      animations:^{
                          [self.gameScene.wormView moveLeft];
@@ -108,18 +115,12 @@
 }
 
 - (IBAction)updateMapTest:(id)sender {
-    NSLog(@"update map test");
-    if (self.gameScene.wormView.alpha) {
-        [UIView animateWithDuration:2 animations:^{
-            self.gameScene.wormView.alpha=0.0;
-        }];
-    }else
-    {
-    [UIView animateWithDuration:2 animations:^{
-        self.gameScene.wormView.alpha=1;
-    }];
-    }
- 
-  
+    NSLog(@"map reset");
+}
+
+
+
+- (IBAction)wormDead:(id)sender {
+    NSLog(@"worm dead");
 }
 @end

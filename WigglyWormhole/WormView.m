@@ -27,6 +27,13 @@
     return self;
 }
 
+-(void)pause
+{
+  
+    self.frame=[self.layer.presentationLayer frame];
+    [self.layer removeAllAnimations];
+
+}
 -(void)moveDown
 {
     self.center=CGPointMake(self.center.x,SCENE_HEIGHT-10);
