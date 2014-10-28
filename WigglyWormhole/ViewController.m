@@ -51,6 +51,8 @@
     
     [self.view addSubview:_gameScene];
     _nsTimer=[NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(update) userInfo:nil repeats:true];
+    
+   // [MyManager sharedManager];
 }
 
 - (void)didReceiveMemoryWarning {
