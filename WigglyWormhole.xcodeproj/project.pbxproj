@@ -23,6 +23,7 @@
 		FA290F2519F5F586000C7420 /* WigglyWormholeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA290F2419F5F586000C7420 /* WigglyWormholeTests.m */; };
 		FA290F3319F5F607000C7420 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = FA290F3219F5F607000C7420 /* Game.m */; };
 		FA357E7519F9810200012A2B /* WormView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA357E7419F9810200012A2B /* WormView.m */; };
+		FA3FE01119FF58FD00EF2337 /* MyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3FE01019FF58FD00EF2337 /* MyManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		FA290F3219F5F607000C7420 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		FA357E7419F9810200012A2B /* WormView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WormView.m; sourceTree = "<group>"; };
 		FA357E7619F9810800012A2B /* WormView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WormView.h; sourceTree = "<group>"; };
+		FA3FE00F19FF58FD00EF2337 /* MyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyManager.h; sourceTree = "<group>"; };
+		FA3FE01019FF58FD00EF2337 /* MyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 				FA28EBD519F602A600026354 /* Macro.h */,
 				FA357E7619F9810800012A2B /* WormView.h */,
 				FA357E7419F9810200012A2B /* WormView.m */,
+				FA3FE00F19FF58FD00EF2337 /* MyManager.h */,
+				FA3FE01019FF58FD00EF2337 /* MyManager.m */,
 				FA2539F319F673A30016F4FD /* GameScene.h */,
 				FA2539F419F673A30016F4FD /* GameScene.m */,
 				FA290F0919F5F586000C7420 /* AppDelegate.h */,
@@ -266,6 +271,7 @@
 				FA290F1119F5F586000C7420 /* ViewController.m in Sources */,
 				FA290F0819F5F586000C7420 /* main.m in Sources */,
 				FA357E7519F9810200012A2B /* WormView.m in Sources */,
+				FA3FE01119FF58FD00EF2337 /* MyManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
