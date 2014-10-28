@@ -17,7 +17,7 @@
 @property (assign) int wormDirection;
 @property (assign) int wormPosX;
 @property (assign) int wormPosY;
-//@property (assign) int mapIndex[20][14];
+@property (assign) int **mapIndex;
 
 -(void)update;
 -(void)wormDown;

@@ -12,14 +12,14 @@
 
 @interface GameScene : UIView
 
-@property (strong) UIImage*landImage;
-@property (strong) UIImage*mushroomImage;
-@property (strong) UIImage*wormholeImage;
+
 
 
 @property (strong) WormView*wormView;
 @property (assign) int wormPosx;
 @property (assign) int wormPosy;
+
+
 
 
 @end

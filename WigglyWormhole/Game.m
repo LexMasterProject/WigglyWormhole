@@ -18,6 +18,7 @@
     int xSpecialPoints[14];
     int ySpecialPoints[20];
     
+    int map[20][14];
 }
 
 -(id)init
@@ -38,6 +39,37 @@
             ySpecialPoints[j]=10+20*j;
         }
         
+       
+        memset(map,0,sizeof(map));
+        _mapIndex=(int**)map;
+        
+        /*
+         random generate mushroom&wormhole
+         wormhole index=1
+        */
+        //generate wormhole
+        for (int i=0; i<5;i++ ) {
+            while (1) {
+                int x=RAND_FROM_TO(0, 13);
+                int y=RAND_FROM_TO(0, 19);
+                if (map[x][y]==0) {
+                    map[x][y]=1;
+                    break;
+                }
+            }
+        }
+        
+        /*
+         generate mushroom
+        */
+        for (int i=0; i<56; i++) {
+            int x=RAND_FROM_TO(0, 13);
+            int y=RAND_FROM_TO(0, 19);
+            if (map[x][y]==0) {
+                map[x][y]=2;
+                break;
+            }
+        }
     }
     return self;
 }
