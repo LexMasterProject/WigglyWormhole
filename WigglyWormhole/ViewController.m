@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "Macro.h"
-#import "MyManager.h"
+
 
 
 
@@ -40,7 +40,8 @@
     CGPoint sceneOrigin=CGPointMake(SCENE_X, SCENE_Y);
     CGSize  sceneSize=CGSizeMake(SCENE_WIDTH, SCENE_HEIGHT);
     CGRect  sceneRect=CGRectMake(sceneOrigin.x, sceneOrigin.y, sceneSize.width, sceneSize.height);
-    _gameScene=[[GameScene alloc]initWithFrame:sceneRect];
+    _gameScene=[[GameScene alloc]initWithFrame:sceneRect withMap:self.game.map];
+    _gameScene.map=self.game.map;
     _gameScene.backgroundColor=[UIColor whiteColor];
     
     //gameScene adjust

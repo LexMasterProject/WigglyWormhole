@@ -8,7 +8,7 @@
 
 #import "GameScene.h"
 #import "Macro.h"
-#import "MyManager.h"
+
 
 
 
@@ -20,7 +20,7 @@
    UIImage*_wormholeImage;
 }
 
--(id)initWithFrame:(CGRect)frame
+-(id)initWithFrame:(CGRect)frame withMap:(NSMutableArray*)map
 {
     self=[super initWithFrame:frame];
     if (self) {
@@ -42,6 +42,7 @@
        
         NSLog(@"loaded image");
         NSLog(@"%f",_landImage.size.width);
+        _map=map;
         /*
         [UIView beginAnimations:@"start moving" context:nil];
         [self.wormView moveDown];
@@ -62,22 +63,25 @@
 }
 - (void)drawLand
 {
+    //                 [_landImage drawAtPoint:CGPointMake(i*CELL_SIZE, j*CELL_SIZE)];
     
- //   int **map=[[MyManager sharedManager]mapIndex];
-    
-    for (int i=0; i<SCENE_CELLS_X; i++)
+    NSLog(@"draw land");
+    for (int i=0; i<SCENE_CELLS_Y; i++)
     {
-        for (int j=0; j<SCENE_CELLS_Y; j++)
+        for (int j=0; j<SCENE_CELLS_X; j++)
         {
-//           
-//            if (map[i][j]==0) {
-//                 [_landImage drawAtPoint:CGPointMake(i*CELL_SIZE, j*CELL_SIZE)];
-//            }
-            
-            [_landImage drawAtPoint:CGPointMake(i*CELL_SIZE, j*CELL_SIZE)];
-           // [_mushroomImage drawAtPoint:CGPointMake(i*CELL_SIZE, j*CELL_SIZE)];
-
-          //  [_wormholeImage drawAtPoint:CGPointMake(i*CELL_SIZE, j*CELL_SIZE)];
+            switch ([_map[i][j] integerValue]) {
+                case GRASS_LAND_INDEX:
+                    [_landImage drawAtPoint:CGPointMake(j*CELL_SIZE,i*CELL_SIZE)];
+                    break;
+                case WORM_HOLE_INDEX:
+                    [_wormholeImage drawAtPoint:CGPointMake(j*CELL_SIZE,i*CELL_SIZE)];
+                    break;
+                case MUSHROOM_INDEX:
+                     [_mushroomImage drawAtPoint:CGPointMake(j*CELL_SIZE,i*CELL_SIZE)];
+                default:
+                    break;
+            }
 
         }
     }

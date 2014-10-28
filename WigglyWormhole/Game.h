@@ -12,6 +12,7 @@
 @interface Game : NSObject
 
 @property (strong) NSString*title;
+@property (strong) NSMutableArray*map;
 @property (assign) int score;
 @property (assign) double wormSpeed;
 @property (assign) int wormDirection;
@@ -24,6 +25,7 @@
 -(void)wormUp;
 -(void)wormLeft;
 -(void)wormRight;
+-(void)initMap;
 
 
 

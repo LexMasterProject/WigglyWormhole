@@ -29,6 +29,14 @@
 #define RAND_FROM_TO(min, max) (min + arc4random_uniform(max - min + 1))
 #define ANIMATION_WORM_OPTIONS (UIViewAnimationOptionCurveLinear|UIViewAnimationOptionBeginFromCurrentState)
 
+#define GAME_TITLE (@"Wiggly Wormhole")
+
+#define GRASS_LAND_INDEX 0
+#define WORM_HOLE_INDEX 1
+#define MUSHROOM_INDEX 2
+#define WORM_HOLE_NUMBER 5
+#define MUSHROOM_NUMBER 56
+
 
 
 #endif
