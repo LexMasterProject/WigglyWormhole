@@ -8,7 +8,6 @@
 
 #import "GameScene.h"
 #import "Macro.h"
-#import "MyManager.h"
 
 
 
@@ -63,23 +62,14 @@
 - (void)drawLand
 {
     
- //   int **map=[[MyManager sharedManager]mapIndex];
-    
     for (int i=0; i<SCENE_CELLS_X; i++)
     {
-        for (int j=0; j<SCENE_CELLS_Y; j++)
-        {
-//           
-//            if (map[i][j]==0) {
-//                 [_landImage drawAtPoint:CGPointMake(i*CELL_SIZE, j*CELL_SIZE)];
-//            }
+        for (int j=0; j<SCENE_CELLS_Y; j++) {
             
-            [_landImage drawAtPoint:CGPointMake(i*CELL_SIZE, j*CELL_SIZE)];
-           // [_mushroomImage drawAtPoint:CGPointMake(i*CELL_SIZE, j*CELL_SIZE)];
+                [_landImage drawAtPoint:CGPointMake(i*CELL_SIZE, j*CELL_SIZE)];
 
-          //  [_wormholeImage drawAtPoint:CGPointMake(i*CELL_SIZE, j*CELL_SIZE)];
-
-        }
+           
+            }
     }
     
     
