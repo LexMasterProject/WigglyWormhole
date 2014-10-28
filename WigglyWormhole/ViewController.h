@@ -31,6 +31,7 @@
 
 - (IBAction)updateMapTest:(id)sender;
 
+- (IBAction)wormDead:(id)sender;
 
 
 @end

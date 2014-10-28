@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WigglyWormhole/ViewController.m"
-            timestampString = "435639491.517764"
+            timestampString = "436050038.749176"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,7 +42,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WigglyWormhole/GameScene.m"
-            timestampString = "435781447.83083"
+            timestampString = "436163498.405229"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "-initWithFrame:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WigglyWormhole/GameScene.m"
+            timestampString = "436163498.405229"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -57,13 +73,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WigglyWormhole/GameScene.m"
-            timestampString = "435783058.618787"
+            filePath = "WigglyWormhole/ViewController.m"
+            timestampString = "436163678.945097"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "-initWithFrame:"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "-pressUp:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

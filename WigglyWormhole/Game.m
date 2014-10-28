@@ -18,6 +18,7 @@
     int xSpecialPoints[14];
     int ySpecialPoints[20];
     
+    int map[20][14];
 }
 
 -(id)init
@@ -27,7 +28,7 @@
         _title=GAME_TITLE;
         _score=0;
         _wormDirection=DOWN;
-        _wormSpeed=2;
+        _wormSpeed=35;
         _wormPosX=10+SCENE_WIDTH/2;
         _wormPosY=-10+SCENE_HEIGHT/2;
         
@@ -38,6 +39,37 @@
             ySpecialPoints[j]=10+20*j;
         }
         
+       
+        memset(map,0,sizeof(map));
+        _mapIndex=(int**)map;
+        
+        /*
+         random generate mushroom&wormhole
+         wormhole index=1
+        */
+        //generate wormhole
+        for (int i=0; i<5;i++ ) {
+            while (1) {
+                int x=RAND_FROM_TO(0, 13);
+                int y=RAND_FROM_TO(0, 19);
+                if (map[x][y]==0) {
+                    map[x][y]=1;
+                    break;
+                }
+            }
+        }
+        
+        /*
+         generate mushroom
+        */
+        for (int i=0; i<56; i++) {
+            int x=RAND_FROM_TO(0, 13);
+            int y=RAND_FROM_TO(0, 19);
+            if (map[x][y]==0) {
+                map[x][y]=2;
+                break;
+            }
+        }
     }
     return self;
 }
@@ -62,24 +94,7 @@
 
 -(void)update
 {
-    NSLog(@"direction:%d",_wormDirection);
-    switch (_wormDirection) {
-        case UP:
-            _wormPosY-=_wormSpeed;
-            break;
-        case DOWN:
-            _wormPosY+=_wormSpeed;
-            break;
-        case RIGHT:
-            _wormPosX+=_wormSpeed;
-            break;
-        case LEFT:
-            [self isXOnTrack:_wormPosX]==1?(_wormPosX-=_wormSpeed):0;
-            break;
-        default:
-            break;
-    }
-    NSLog(@"x:%d,y:%d:",_wormPosX,_wormPosY);
+    NSLog(@"worm (x:%d,y:%d)",_wormPosX,_wormPosY);
 }
 
 -(void)wormDown

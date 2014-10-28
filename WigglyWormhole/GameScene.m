@@ -12,15 +12,23 @@
 
 
 @implementation GameScene
+{
+   //image resources
+   UIImage*_landImage;
+   UIImage*_mushroomImage;
+   UIImage*_wormholeImage;
+}
 
 -(id)initWithFrame:(CGRect)frame
 {
     self=[super initWithFrame:frame];
     if (self) {
-        _land=[UIImage imageNamed:@"emptycell.png"];
-      
         
-       
+        //load images
+        _landImage=[UIImage imageNamed:@"emptycell.png"];
+        _mushroomImage=[UIImage imageNamed:@"shroomcell.png"];
+        _wormholeImage=[UIImage imageNamed:@"wormholecell.png"];
+        
         
         UIImage *warmFaceImage = [UIImage imageNamed:@"wormface.png"];
         _wormView=[[WormView alloc]initWithImage:warmFaceImage];
@@ -28,10 +36,11 @@
         
         [self addSubview:_wormView];
         
+       
         
        
         NSLog(@"loaded image");
-        NSLog(@"%f",self.land.size.width);
+        NSLog(@"%f",_landImage.size.width);
         /*
         [UIView beginAnimations:@"start moving" context:nil];
         [self.wormView moveDown];
@@ -57,8 +66,10 @@
     {
         for (int j=0; j<SCENE_CELLS_Y; j++) {
             
-            [self.land drawAtPoint:CGPointMake(i*CELL_SIZE, j*CELL_SIZE)];
-        }
+                [_landImage drawAtPoint:CGPointMake(i*CELL_SIZE, j*CELL_SIZE)];
+
+           
+            }
     }
     
     

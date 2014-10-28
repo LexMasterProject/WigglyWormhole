@@ -40,6 +40,12 @@
     _gameScene=[[GameScene alloc]initWithFrame:sceneRect];
     _gameScene.backgroundColor=[UIColor whiteColor];
     
+    //gameScene adjust
+    _gameScene.transform=CGAffineTransformScale(_gameScene.transform, 0.8, 0.8);
+    _gameScene.transform=CGAffineTransformTranslate(_gameScene.transform, -35, -60);
+    
+    
+    
     [self.view addSubview:_gameScene];
     _nsTimer=[NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(update) userInfo:nil repeats:true];
 }
@@ -50,57 +56,72 @@
 }
 -(void)update
 {
+   
+  
+    self.game.wormPosX=[self.gameScene.wormView getPosX];
+    self.game.wormPosY=[self.gameScene.wormView getPosY];
     [self.game update];
+    
    // self.gameScene.wormPosx=self.game.wormPosX;
   //  self.gameScene.wormPosy=self.game.wormPosY;
    // [self.gameScene setNeedsDisplay];
     
 }
+//#define ANIMATION_WORM_OPTIONS (UIViewAnimationOptionCurveLinear|UIViewAnimationOptionBeginFromCurrentState)
 - (IBAction)pressUp:(id)sender {
     [self.game wormUp];
-    [UIView beginAnimations:@"movingspookily" context:nil];
-    [UIView setAnimationDuration:5];
-    [self.gameScene.wormView moveUp];
-    [UIView commitAnimations];
+    [self.gameScene.wormView pause];
+    double length=self.gameScene.wormView.getPosY-10;
+    [UIView animateWithDuration:length/self.game.wormSpeed delay:0 options:ANIMATION_WORM_OPTIONS
+                     animations:^{
+                           [self.gameScene.wormView moveUp];
+                     } completion:^(BOOL finished) {
+                         
+                     }];
 }
 - (IBAction)pressRight:(id)sender {
-     [self.game wormRight];
-    [UIView beginAnimations:@"movingspookily" context:nil];
-    [UIView setAnimationDuration:5];
-    [self.gameScene.wormView moveRight];
-    [UIView commitAnimations];
+    [self.game wormRight];
+    [self.gameScene.wormView pause];
+    double length=SCENE_WIDTH-self.gameScene.wormView.getPosX-10;
+    [UIView animateWithDuration:length/self.game.wormSpeed delay:0 options:ANIMATION_WORM_OPTIONS
+                     animations:^{
+                         [self.gameScene.wormView moveRight];
+                     } completion:^(BOOL finished) {
+                         
+                     }];
 }
 
 - (IBAction)pressDown:(id)sender {
     [self.game wormDown];
-    //todo
-    [UIView beginAnimations:@"movingspookily" context:nil];
-    [UIView setAnimationDuration:5];
-    [self.gameScene.wormView moveDown];
-    [UIView commitAnimations];
+    [self.gameScene.wormView pause];
+    double length=SCENE_HEIGHT-self.gameScene.wormView.getPosY-10;
+    [UIView animateWithDuration:length/self.game.wormSpeed delay:0 options:ANIMATION_WORM_OPTIONS
+                     animations:^{
+                         [self.gameScene.wormView moveDown];
+                     } completion:^(BOOL finished) {
+                         
+                     }];
 }
 
 - (IBAction)pressLeft:(id)sender {
     [self.game wormLeft];
-    [UIView beginAnimations:@"movingspookily" context:nil];
-    [UIView setAnimationDuration:5];
-    [self.gameScene.wormView moveLeft];
-    [UIView commitAnimations];
+    [self.gameScene.wormView pause];
+    double length=self.gameScene.wormView.getPosX-10;
+    [UIView animateWithDuration:length/self.game.wormSpeed delay:0 options:ANIMATION_WORM_OPTIONS
+                     animations:^{
+                         [self.gameScene.wormView moveLeft];
+                     } completion:^(BOOL finished) {
+                         
+                     }];
 }
 
 - (IBAction)updateMapTest:(id)sender {
-    NSLog(@"update map test");
-    if (self.gameScene.wormView.alpha) {
-        [UIView animateWithDuration:2 animations:^{
-            self.gameScene.wormView.alpha=0.0;
-        }];
-    }else
-    {
-    [UIView animateWithDuration:2 animations:^{
-        self.gameScene.wormView.alpha=1;
-    }];
-    }
- 
-  
+    NSLog(@"map reset");
+}
+
+
+
+- (IBAction)wormDead:(id)sender {
+    NSLog(@"worm dead");
 }
 @end

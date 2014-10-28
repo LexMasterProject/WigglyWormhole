@@ -14,6 +14,9 @@
 -(void)moveUp;
 -(void)moveLeft;
 -(void)moveRight;
+-(void)pause;
+-(int)getPosX;
+-(int)getPosY;
 
 @property (strong)UIImage*wormImage;
 
