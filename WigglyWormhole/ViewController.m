@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Macro.h"
+#import "MyManager.h"
 
 
 
@@ -25,6 +26,7 @@
     
     //initial game
     _game=[[Game alloc]init];
+   
     
     //initial view
     self.view.backgroundColor=[UIColor blackColor];
@@ -32,6 +34,7 @@
     self.uiGameTitle.textColor=[UIColor whiteColor];
     self.uiGameScore.text=[[NSString alloc]initWithFormat:@"%d",_game.score];
     self.uiGameScore.textColor=[UIColor whiteColor];
+    
     
     //initial scene
     CGPoint sceneOrigin=CGPointMake(SCENE_X, SCENE_Y);
@@ -61,7 +64,7 @@
     self.game.wormPosX=[self.gameScene.wormView getPosX];
     self.game.wormPosY=[self.gameScene.wormView getPosY];
     [self.game update];
-    
+    self.uiGameScore.text=[NSString stringWithFormat:@"%5d",self.game.score];
    // self.gameScene.wormPosx=self.game.wormPosX;
   //  self.gameScene.wormPosy=self.game.wormPosY;
    // [self.gameScene setNeedsDisplay];
