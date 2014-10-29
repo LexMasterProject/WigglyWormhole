@@ -21,6 +21,7 @@
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -48,7 +49,7 @@
     _gameScene.transform=CGAffineTransformScale(_gameScene.transform, 0.8, 0.8);
     _gameScene.transform=CGAffineTransformTranslate(_gameScene.transform, -35, -60);
     
-    
+
     
     [self.view addSubview:_gameScene];
     _nsTimer=[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(update) userInfo:nil repeats:true];
@@ -67,6 +68,19 @@
     self.uiGameScore.text=[NSString stringWithFormat:@"%5d",self.game.score];
     self.gameScene.map=self.game.map;
     [self.gameScene setNeedsDisplay];
+    
+    if (self.game.wormDirection==DIRECTION_NONE) {
+        NSLog(@"worm dead");
+        NSString*alertMsg=[NSString stringWithFormat:@"You scored %d",self.game.score];
+        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:@"Oh no, you died!"
+                                                      message:alertMsg
+                                                     delegate:self
+                                            cancelButtonTitle:@"OK"
+                                            otherButtonTitles:nil];
+        
+        [alert show];
+        [_nsTimer invalidate];
+    }
     
 }
 //#define ANIMATION_WORM_OPTIONS (UIViewAnimationOptionCurveLinear|UIViewAnimationOptionBeginFromCurrentState)
@@ -98,5 +112,23 @@
 
 - (IBAction)wormDead:(id)sender {
     NSLog(@"worm dead");
+    UIAlertView* alert=[[UIAlertView alloc] initWithTitle:@"Oh no, you died!"
+                                      message:@"You dead!"
+                                     delegate:self
+                            cancelButtonTitle:@"OK"
+                            otherButtonTitles:nil];
+    
+    [alert show];
 }
+
+-(void) alertView:(UIAlertView *)alertView willDismissWithButtonIndex:    (NSInteger)buttonIndex
+{
+    if (buttonIndex==0) {
+        NSLog(@"press ok");
+         _game=[[Game alloc]init];
+          _nsTimer=[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(update) userInfo:nil repeats:true];
+    }
+}
+
+
 @end

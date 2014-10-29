@@ -143,7 +143,7 @@
     }
     //hit wall detect
     if (nextx<0||nexty<0||nextx>19||nexty>13) {
-        NSLog(@"hit walls");
+        _wormDirection=DIRECTION_NONE;
     }
     else
     {
