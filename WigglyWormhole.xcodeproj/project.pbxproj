@@ -22,7 +22,6 @@
 		FA290F1919F5F586000C7420 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA290F1719F5F586000C7420 /* LaunchScreen.xib */; };
 		FA290F2519F5F586000C7420 /* WigglyWormholeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA290F2419F5F586000C7420 /* WigglyWormholeTests.m */; };
 		FA290F3319F5F607000C7420 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = FA290F3219F5F607000C7420 /* Game.m */; };
-		FA357E7519F9810200012A2B /* WormView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA357E7419F9810200012A2B /* WormView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +59,6 @@
 		FA290F2419F5F586000C7420 /* WigglyWormholeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WigglyWormholeTests.m; sourceTree = "<group>"; };
 		FA290F3119F5F607000C7420 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		FA290F3219F5F607000C7420 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
-		FA357E7419F9810200012A2B /* WormView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WormView.m; sourceTree = "<group>"; };
-		FA357E7619F9810800012A2B /* WormView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WormView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,13 +102,11 @@
 			children = (
 				FA290F3219F5F607000C7420 /* Game.m */,
 				FA290F3119F5F607000C7420 /* Game.h */,
-				FA290F0A19F5F586000C7420 /* AppDelegate.m */,
 				FA28EBD519F602A600026354 /* Macro.h */,
-				FA357E7619F9810800012A2B /* WormView.h */,
-				FA357E7419F9810200012A2B /* WormView.m */,
 				FA2539F319F673A30016F4FD /* GameScene.h */,
 				FA2539F419F673A30016F4FD /* GameScene.m */,
 				FA290F0919F5F586000C7420 /* AppDelegate.h */,
+				FA290F0A19F5F586000C7420 /* AppDelegate.m */,
 				FA290F0F19F5F586000C7420 /* ViewController.h */,
 				FA290F1019F5F586000C7420 /* ViewController.m */,
 				FA290F1219F5F586000C7420 /* Main.storyboard */,
@@ -265,7 +260,6 @@
 				FA290F0E19F5F586000C7420 /* WigglyWormhole.xcdatamodeld in Sources */,
 				FA290F1119F5F586000C7420 /* ViewController.m in Sources */,
 				FA290F0819F5F586000C7420 /* main.m in Sources */,
-				FA357E7519F9810200012A2B /* WormView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -51,7 +51,7 @@
     
     
     [self.view addSubview:_gameScene];
-    _nsTimer=[NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(update) userInfo:nil repeats:true];
+    _nsTimer=[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(update) userInfo:nil repeats:true];
     
    // [MyManager sharedManager];
 }
@@ -63,62 +63,31 @@
 -(void)update
 {
    
-  
-    self.game.wormPosX=[self.gameScene.wormView getPosX];
-    self.game.wormPosY=[self.gameScene.wormView getPosY];
     [self.game update];
     self.uiGameScore.text=[NSString stringWithFormat:@"%5d",self.game.score];
-   // self.gameScene.wormPosx=self.game.wormPosX;
-  //  self.gameScene.wormPosy=self.game.wormPosY;
-   // [self.gameScene setNeedsDisplay];
+    self.gameScene.map=self.game.map;
+    [self.gameScene setNeedsDisplay];
     
 }
 //#define ANIMATION_WORM_OPTIONS (UIViewAnimationOptionCurveLinear|UIViewAnimationOptionBeginFromCurrentState)
 - (IBAction)pressUp:(id)sender {
     [self.game wormUp];
-    [self.gameScene.wormView pause];
-    double length=self.gameScene.wormView.getPosY-10;
-    [UIView animateWithDuration:length/self.game.wormSpeed delay:0 options:ANIMATION_WORM_OPTIONS
-                     animations:^{
-                           [self.gameScene.wormView moveUp];
-                     } completion:^(BOOL finished) {
-                         
-                     }];
+   
+  
 }
 - (IBAction)pressRight:(id)sender {
     [self.game wormRight];
-    [self.gameScene.wormView pause];
-    double length=SCENE_WIDTH-self.gameScene.wormView.getPosX-10;
-    [UIView animateWithDuration:length/self.game.wormSpeed delay:0 options:ANIMATION_WORM_OPTIONS
-                     animations:^{
-                         [self.gameScene.wormView moveRight];
-                     } completion:^(BOOL finished) {
-                         
-                     }];
+
 }
 
 - (IBAction)pressDown:(id)sender {
     [self.game wormDown];
-    [self.gameScene.wormView pause];
-    double length=SCENE_HEIGHT-self.gameScene.wormView.getPosY-10;
-    [UIView animateWithDuration:length/self.game.wormSpeed delay:0 options:ANIMATION_WORM_OPTIONS
-                     animations:^{
-                         [self.gameScene.wormView moveDown];
-                     } completion:^(BOOL finished) {
-                         
-                     }];
+   
 }
 
 - (IBAction)pressLeft:(id)sender {
     [self.game wormLeft];
-    [self.gameScene.wormView pause];
-    double length=self.gameScene.wormView.getPosX-10;
-    [UIView animateWithDuration:length/self.game.wormSpeed delay:0 options:ANIMATION_WORM_OPTIONS
-                     animations:^{
-                         [self.gameScene.wormView moveLeft];
-                     } completion:^(BOOL finished) {
-                         
-                     }];
+   
 }
 
 - (IBAction)updateMapTest:(id)sender {

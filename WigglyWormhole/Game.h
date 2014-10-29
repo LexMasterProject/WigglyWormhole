@@ -14,11 +14,9 @@
 @property (strong) NSString*title;
 @property (strong) NSMutableArray*map;
 @property (assign) int score;
-@property (assign) double wormSpeed;
 @property (assign) int wormDirection;
-@property (assign) int wormPosX;
-@property (assign) int wormPosY;
-@property (assign) int **mapIndex;
+
+
 
 -(void)update;
 -(void)wormDown;

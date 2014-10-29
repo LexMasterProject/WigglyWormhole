@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WormView.h"
+
 
 
 @interface GameScene : UIView
 
 -(id)initWithFrame:(CGRect)frame withMap:(NSMutableArray*)map;
 
-@property (strong) WormView*wormView;
+
 @property (assign) int wormPosx;
 @property (assign) int wormPosy;
 
