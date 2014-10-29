@@ -16,6 +16,7 @@
 @implementation Game
 {
     NSMutableArray*_wormArr;
+    
 }
 
 
@@ -76,61 +77,69 @@
     _map[10][7]=[NSNumber numberWithInt:WORM_FACE_INDEX];
     
 }
--(void)update
+-(void)updateMapAndWormWithNextX:(int)nextx andY:(int)nexty
 {
     int headx=[_wormArr[0][0] integerValue];
     int heady=[_wormArr[0][1] integerValue];
     int tailx=[[_wormArr lastObject][0] integerValue];
     int taily=[[_wormArr lastObject][1] integerValue];
+    if ([_map[nextx][nexty]integerValue]==MUSHROOM_INDEX) {
+        
+        //update map
+        _map[nextx][nexty]=[NSNumber numberWithInt:WORM_FACE_INDEX];
+        _map[headx][heady]=[NSNumber numberWithInt:WORM_BODY_INDEX];
+        //add new head
+        [_wormArr insertObject:[NSMutableArray arrayWithObjects:
+                                [NSNumber numberWithInt:nextx],
+                                [NSNumber numberWithInt:nexty],
+                                nil] atIndex:0];
+        //leave tail there
+        
+    }
+    else
+    {
+        //update map
+        _map[nextx][nexty]=[NSNumber numberWithInt:WORM_FACE_INDEX];
+        _map[headx][heady]=[NSNumber numberWithInt:WORM_BODY_INDEX];
+        _map[tailx][taily]=[NSNumber numberWithInt:GRASS_LAND_INDEX];
+        //add new head
+        [_wormArr insertObject:[NSMutableArray arrayWithObjects:
+                                [NSNumber numberWithInt:nextx],
+                                [NSNumber numberWithInt:nexty],
+                                nil] atIndex:0];
+        
+        //cut tail
+        [_wormArr removeLastObject];
+        
+    }
+
+}
+-(void)update
+{
+    int headx=[_wormArr[0][0] integerValue];
+    int heady=[_wormArr[0][1] integerValue];
     int nextx,nexty;
+ 
     switch (_wormDirection) {
         case UP:
             nexty=heady;
             nextx=headx-1;
-            if ([_map[nextx][nexty]integerValue]==MUSHROOM_INDEX) {
-                
-                //update map
-                _map[nextx][nexty]=[NSNumber numberWithInt:WORM_FACE_INDEX];
-                _map[headx][heady]=[NSNumber numberWithInt:WORM_BODY_INDEX];
-                //add new head
-                [_wormArr insertObject:[NSMutableArray arrayWithObjects:
-                                        [NSNumber numberWithInt:nextx],
-                                        [NSNumber numberWithInt:nexty],
-                                        nil] atIndex:0];
-                //leave tail there
-                
-            }
-            else
-            {
-                //update map
-                _map[nextx][nexty]=[NSNumber numberWithInt:WORM_FACE_INDEX];
-                _map[headx][heady]=[NSNumber numberWithInt:WORM_BODY_INDEX];
-                _map[tailx][taily]=[NSNumber numberWithInt:GRASS_LAND_INDEX];
-                //add new head
-                [_wormArr insertObject:[NSMutableArray arrayWithObjects:
-                                        [NSNumber numberWithInt:nextx],
-                                        [NSNumber numberWithInt:nexty],
-                                        nil] atIndex:0];
-
-                //cut tail
-                [_wormArr removeLastObject];
-                
-                
-                
-            }
-            
             break;
         case DOWN:
-          
+            nexty=heady;
+            nextx=headx+1;
             break;
         case LEFT:
-           
+            nextx=headx;
+            nexty=heady-1;
             break;
         case RIGHT:
-           
+            nextx=headx;
+            nexty=heady+1;
         default:
             break;
     }
+      [self updateMapAndWormWithNextX:nextx andY:nexty];
     _score+=10;
 }
 
