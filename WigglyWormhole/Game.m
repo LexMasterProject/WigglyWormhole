@@ -35,6 +35,7 @@
         _wormArr=[NSMutableArray arrayWithObjects:
                   head,
                   nil];
+        _isWormDead=0;
         
         
         
@@ -118,7 +119,8 @@
 {
     int headx=[_wormArr[0][0] integerValue];
     int heady=[_wormArr[0][1] integerValue];
-    int nextx,nexty;
+    int nextx=-1;
+    int nexty=-1;
  
     switch (_wormDirection) {
         case UP:
@@ -139,8 +141,15 @@
         default:
             break;
     }
-      [self updateMapAndWormWithNextX:nextx andY:nexty];
+    //hit wall detect
+    if (nextx<0||nexty<0||nextx>19||nexty>13) {
+        NSLog(@"hit walls");
+    }
+    else
+    {
+    [self updateMapAndWormWithNextX:nextx andY:nexty];
     _score+=10;
+    }
 }
 
 -(void)wormDown

@@ -15,6 +15,7 @@
 @property (strong) NSMutableArray*map;
 @property (assign) int score;
 @property (assign) int wormDirection;
+@property (assign) int isWormDead;
 
 
 

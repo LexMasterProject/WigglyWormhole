@@ -24,6 +24,7 @@
 #define LEFT 1
 #define RIGHT 2
 #define DOWN 3
+#define DIRECTION_NONE 4 //dead here
 
 
 #define RAND_FROM_TO(min, max) (min + arc4random_uniform(max - min + 1))
