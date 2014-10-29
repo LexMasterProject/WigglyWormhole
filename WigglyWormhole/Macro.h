@@ -24,7 +24,7 @@
 #define LEFT 1
 #define RIGHT 2
 #define DOWN 3
-#define SPEED 1
+
 
 #define RAND_FROM_TO(min, max) (min + arc4random_uniform(max - min + 1))
 #define ANIMATION_WORM_OPTIONS (UIViewAnimationOptionCurveLinear|UIViewAnimationOptionBeginFromCurrentState)

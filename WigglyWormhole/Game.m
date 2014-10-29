@@ -145,18 +145,18 @@
 
 -(void)wormDown
 {
-    _wormDirection=DOWN;
+    _wormDirection=(_wormDirection==UP)?UP:DOWN;
 }
 -(void)wormUp
 {
-    _wormDirection=UP;
+     _wormDirection=(_wormDirection==DOWN)?DOWN:UP;
 }
 -(void)wormLeft
 {
-    _wormDirection=LEFT;
+     _wormDirection=(_wormDirection==RIGHT)?RIGHT:LEFT;
 }
 -(void)wormRight
 {
-    _wormDirection=RIGHT;
+     _wormDirection=(_wormDirection==LEFT)?LEFT:RIGHT;
 }
 @end
