@@ -25,7 +25,7 @@
 {
     if (self=[super init]) {
         _title=GAME_TITLE;
-        _score=0;
+        _score=-10;
         _wormDirection=DOWN;
         
         
@@ -81,19 +81,21 @@
     }
 
     for (int i=0; i<MUSHROOM_NUMBER;i++ ) {
-        int index=RAND_FROM_TO(0, [_emptyCell count]-1);
-        int posInfo=[_emptyCell[index] integerValue];
-        int x=posInfo/14;
-        int y=posInfo%14;
-    
-        [_emptyCell removeObjectAtIndex:index];
-        _map[x][y]=[NSNumber numberWithInt:MUSHROOM_INDEX];
-
+        [self generateNewMushroom];
     }
-    
-    
-    
 }
+
+-(void)generateNewMushroom
+{
+    int index=RAND_FROM_TO(0, [_emptyCell count]-1);
+    int posInfo=[_emptyCell[index] integerValue];
+    int x=posInfo/14;
+    int y=posInfo%14;
+    
+    [_emptyCell removeObjectAtIndex:index];
+    _map[x][y]=[NSNumber numberWithInt:MUSHROOM_INDEX];
+}
+
 -(void)updateMapAndWormWithNextX:(int)nextx andY:(int)nexty
 {
     int headx=[_wormArr[0][0] integerValue];
@@ -112,12 +114,16 @@
                                     [NSNumber numberWithInt:nexty],
                                     nil] atIndex:0];
             //leave tail there
+            
+            //generate the new mushroom
+            [self generateNewMushroom];
+            
             break;
         case GRASS_LAND_INDEX:
         
             //update map
             for (int i=0; i<[_emptyCell count]; i++) {
-                if (nextx*14+taily==[_emptyCell[i] integerValue]) {
+                if (nextx*14+nexty==[_emptyCell[i] integerValue]) {
                     [_emptyCell removeObjectAtIndex:i];
                     break;
                 }
