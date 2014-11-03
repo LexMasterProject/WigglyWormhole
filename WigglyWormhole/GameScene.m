@@ -40,10 +40,7 @@
     return self;
 }
 
--(void) drawWorm
-{
- 
-}
+
 - (void)drawLand
 {
     for (int i=0; i<SCENE_CELLS_Y; i++)
