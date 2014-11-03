@@ -41,6 +41,8 @@
 #define WORM_HOLE_NUMBER 5
 #define MUSHROOM_NUMBER 56
 
+typedef unsigned long ULONG;
+
 
 
 #endif
