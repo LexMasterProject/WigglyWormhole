@@ -36,6 +36,8 @@
     self.uiGameScore.text=[[NSString alloc]initWithFormat:@"%d",_game.score];
     self.uiGameScore.textColor=[UIColor whiteColor];
     
+    //init gesture
+    [self initGestureRecognizer];
     
     //initial scene
     CGPoint sceneOrigin=CGPointMake(SCENE_X, SCENE_Y);
@@ -54,12 +56,10 @@
     [self.view addSubview:_gameScene];
     _nsTimer=[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(update) userInfo:nil repeats:true];
     
-   // [MyManager sharedManager];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 -(void)update
 {
@@ -108,8 +108,56 @@
     NSLog(@"map reset");
 }
 
+//gesture
+-(void)initGestureRecognizer
+{
+    //left
+    UISwipeGestureRecognizer*swipeLeftRecognizer=
+    [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeLeft)];
+    swipeLeftRecognizer.direction=UISwipeGestureRecognizerDirectionLeft;
+    swipeLeftRecognizer.numberOfTouchesRequired=1;
+    [self.view addGestureRecognizer:swipeLeftRecognizer];
+    
+    //right
+    UISwipeGestureRecognizer*swipeRightRecognizer=
+    [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeRight)];
+    swipeRightRecognizer.direction=UISwipeGestureRecognizerDirectionRight;
+    swipeRightRecognizer.numberOfTouchesRequired=1;
+    [self.view addGestureRecognizer:swipeRightRecognizer];
 
+    //up
+    UISwipeGestureRecognizer*swipeUpRecognizer=
+    [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeUp)];
+    swipeUpRecognizer.direction=UISwipeGestureRecognizerDirectionUp;
+    swipeUpRecognizer.numberOfTouchesRequired=1;
+    [self.view addGestureRecognizer:swipeUpRecognizer];
+    
+    //down
+    UISwipeGestureRecognizer*swipeDownRecognizer=
+    [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeDown)];
+    swipeDownRecognizer.direction=UISwipeGestureRecognizerDirectionDown;
+    swipeDownRecognizer.numberOfTouchesRequired=1;
+    [self.view addGestureRecognizer:swipeDownRecognizer];
+}
 
+-(void)swipeLeft
+{
+    [self.game wormLeft];
+  
+}
+-(void)swipeRight
+{
+    [self.game wormRight];
+   
+}
+-(void)swipeDown
+{
+    [self.game wormDown];
+}
+-(void)swipeUp
+{
+    [self.game wormUp];
+}
 - (IBAction)wormDead:(id)sender {
     NSLog(@"worm dead");
     UIAlertView* alert=[[UIAlertView alloc] initWithTitle:@"Oh no, you died!"

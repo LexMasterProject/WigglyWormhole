@@ -10,7 +10,7 @@
 #import "Game.h"
 #import "GameScene.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UIGestureRecognizerDelegate>
 
 @property (strong)Game*game;
 @property (strong) GameScene*gameScene;
@@ -32,6 +32,11 @@
 - (IBAction)updateMapTest:(id)sender;
 
 - (IBAction)wormDead:(id)sender;
+
+-(void)swipeLeft;
+-(void)swipeRight;
+-(void)swipeDown;
+-(void)swipeUp;
 
 
 @end
