@@ -25,7 +25,7 @@
 {
     if (self=[super init]) {
         _title=GAME_TITLE;
-        _score=-10;
+        _score=0;
         _wormDirection=DOWN;
         
         

@@ -27,6 +27,7 @@
     
     //initial game
     _game=[[Game alloc]init];
+  
    
     
     //initial view
@@ -44,20 +45,51 @@
     CGSize  sceneSize=CGSizeMake(SCENE_WIDTH, SCENE_HEIGHT);
     CGRect  sceneRect=CGRectMake(sceneOrigin.x, sceneOrigin.y, sceneSize.width, sceneSize.height);
     _gameScene=[[GameScene alloc]initWithFrame:sceneRect withMap:self.game.map];
-    _gameScene.map=self.game.map;
     _gameScene.backgroundColor=[UIColor whiteColor];
     
     //gameScene adjust
     _gameScene.transform=CGAffineTransformScale(_gameScene.transform, 0.8, 0.8);
     _gameScene.transform=CGAffineTransformTranslate(_gameScene.transform, -35, -60);
+    [self.view addSubview:_gameScene];
+    [self loadGame];
     
 
     
-    [self.view addSubview:_gameScene];
-    _nsTimer=[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(update) userInfo:nil repeats:true];
     
 }
 
+-(void)loadGame
+{
+    _game=[[Game alloc]init];
+    self.gameScene.map=self.game.map;
+    self.uiGameScore.text=[NSString stringWithFormat:@"%5d",self.game.score];
+    [self.gameScene setNeedsDisplay];
+    _countDownLabel=[[UILabel alloc]initWithFrame:CGRectMake(110, 100, 200, 200)];
+    _countDownLabel.font=[UIFont fontWithName:@"Hiragino Mincho ProN" size:150];
+    [_countDownLabel setTextColor:[UIColor whiteColor]];
+  
+    [self.view addSubview:_countDownLabel];
+    
+    
+    _nsCountDown=[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDown) userInfo:nil repeats:true];
+    _countDownSec=3;
+
+    
+}
+-(void)countDown
+{
+    NSLog(@"here");
+    if (_countDownSec>0) {
+        [_countDownLabel setText:[NSString stringWithFormat:@"%d",_countDownSec]];
+        _countDownSec--;
+    }
+    else
+    {
+        [self.nsCountDown invalidate];
+        [_countDownLabel removeFromSuperview];
+        _nsTimer=[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(update) userInfo:nil repeats:true];
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -80,6 +112,7 @@
         
         [alert show];
         [_nsTimer invalidate];
+    
     }
     
 }
@@ -173,8 +206,7 @@
 {
     if (buttonIndex==0) {
         NSLog(@"press ok");
-         _game=[[Game alloc]init];
-          _nsTimer=[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(update) userInfo:nil repeats:true];
+        [self loadGame];
     }
 }
 

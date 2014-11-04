@@ -16,6 +16,8 @@
 @property (strong) GameScene*gameScene;
 @property (strong) NSTimer*nsTimer;
 @property (strong) NSTimer*nsCountDown;
+@property (strong) UILabel*countDownLabel;
+@property (assign) int countDownSec;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *uiGameTitle;
