@@ -28,7 +28,8 @@
     //initial game
     _game=[[Game alloc]init];
   
-   
+    
+
     
     //initial view
     self.view.backgroundColor=[UIColor blackColor];
@@ -52,6 +53,7 @@
     _gameScene.transform=CGAffineTransformTranslate(_gameScene.transform, -35, -60);
     [self.view addSubview:_gameScene];
     [self loadGame];
+    self.navigationController.navigationBarHidden=YES;
     
 
     
@@ -78,10 +80,12 @@
 }
 -(void)countDown
 {
-    NSLog(@"here");
+    
     if (_countDownSec>0) {
         [_countDownLabel setText:[NSString stringWithFormat:@"%d",_countDownSec]];
         _countDownSec--;
+        
+        NSLog(@"countDown:%d",_countDownSec);
     }
     else
     {
@@ -137,9 +141,7 @@
    
 }
 
-- (IBAction)updateMapTest:(id)sender {
-    NSLog(@"map reset");
-}
+
 
 //gesture
 -(void)initGestureRecognizer
@@ -192,14 +194,11 @@
     [self.game wormUp];
 }
 - (IBAction)wormDead:(id)sender {
-    NSLog(@"worm dead");
-    UIAlertView* alert=[[UIAlertView alloc] initWithTitle:@"Oh no, you died!"
-                                      message:@"You dead!"
-                                     delegate:self
-                            cancelButtonTitle:@"OK"
-                            otherButtonTitles:nil];
-    
-    [alert show];
+    [_nsCountDown invalidate];
+  [_nsTimer invalidate];
+    [self.navigationController popViewControllerAnimated:YES];
+    NSLog(@"back to mainmenu");
+       self.navigationController.navigationBarHidden=NO;
 }
 
 -(void) alertView:(UIAlertView *)alertView willDismissWithButtonIndex:    (NSInteger)buttonIndex

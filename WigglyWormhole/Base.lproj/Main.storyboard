@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U04-MF-54G">
@@ -31,16 +31,6 @@
                                 </state>
                                 <connections>
                                     <action selector="pressUp:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cO7-YE-Ejh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLv-Qb-gyR">
-                                <rect key="frame" x="66" y="408" width="46" height="30"/>
-                                <state key="normal" title="Left">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pressLeft:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cMM-29-453"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZw-Rr-NT4">
@@ -69,18 +59,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IbB-jw-gXf">
-                                <rect key="frame" x="235" y="376" width="75" height="30"/>
-                                <state key="normal" title="resetMap">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="updateMapTest:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="NtU-7z-oQd"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTI-8R-Zxc">
-                                <rect key="frame" x="235" y="408" width="73" height="30"/>
-                                <state key="normal" title="wormdead">
+                                <rect key="frame" x="235" y="408" width="34" height="30"/>
+                                <state key="normal" title="back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -97,6 +78,16 @@
                                 <rect key="frame" x="48" y="94" width="300" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLv-Qb-gyR">
+                                <rect key="frame" x="66" y="408" width="46" height="30"/>
+                                <state key="normal" title="Left">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressLeft:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cMM-29-453"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -106,7 +97,10 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="6ir-SQ-oQn"/>
+                    <navigationItem key="navigationItem" id="ECm-TI-BYW">
+                        <barButtonItem key="backBarButtonItem" title="back" id="GnH-GC-2Pd"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="uiGameScore" destination="B36-2y-c68" id="L4k-s9-5YG"/>
                         <outlet property="uiGameTitle" destination="U04-MF-54G" id="rfx-ll-cQ4"/>
@@ -137,7 +131,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Igw-Nw-6Ps"/>
+                    <navigationItem key="navigationItem" id="Igw-Nw-6Ps">
+                        <barButtonItem key="backBarButtonItem" title="back" id="zgU-ic-avG"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Myd-fr-FgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,7 +157,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="modal" id="oTX-Pe-Qd9"/>
+                                    <segue destination="vXZ-lx-hvc" kind="push" id="oTX-Pe-Qd9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnV-YE-he6">
@@ -212,7 +208,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Gea-Sl-vUZ"/>
+                    <navigationItem key="navigationItem" id="Gea-Sl-vUZ">
+                        <barButtonItem key="backBarButtonItem" title="back" id="3sc-Qc-5dG"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ke2-bn-ZON" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

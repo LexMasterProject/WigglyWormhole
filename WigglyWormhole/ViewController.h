@@ -32,7 +32,7 @@
 
 - (IBAction)pressLeft:(id)sender;
 
-- (IBAction)updateMapTest:(id)sender;
+
 
 - (IBAction)wormDead:(id)sender;
 
