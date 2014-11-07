@@ -85,7 +85,7 @@
         [_countDownLabel setText:[NSString stringWithFormat:@"%d",_countDownSec]];
         _countDownSec--;
         
-        NSLog(@"countDown:%d",_countDownSec);
+        
     }
     else
     {
@@ -106,7 +106,6 @@
     [self.gameScene setNeedsDisplay];
     
     if (self.game.wormDirection==DIRECTION_NONE) {
-        NSLog(@"worm dead");
         NSString*alertMsg=[NSString stringWithFormat:@"You scored %d",self.game.score];
         UIAlertView* alert=[[UIAlertView alloc] initWithTitle:@"Oh no, you died!"
                                                       message:alertMsg
@@ -197,14 +196,14 @@
     [_nsCountDown invalidate];
   [_nsTimer invalidate];
     [self.navigationController popViewControllerAnimated:YES];
-    NSLog(@"back to mainmenu");
+  
        self.navigationController.navigationBarHidden=NO;
 }
 
 -(void) alertView:(UIAlertView *)alertView willDismissWithButtonIndex:    (NSInteger)buttonIndex
 {
     if (buttonIndex==0) {
-        NSLog(@"press ok");
+     
         [self loadGame];
     }
 }

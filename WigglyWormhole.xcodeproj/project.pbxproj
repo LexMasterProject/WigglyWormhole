@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA1869771A0C605F00D4950F /* ScoreBoardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1869761A0C605F00D4950F /* ScoreBoardVC.m */; };
+		FA18697A1A0C650E00D4950F /* SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1869791A0C650E00D4950F /* SettingsVC.m */; };
 		FA2539F519F673A30016F4FD /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2539F419F673A30016F4FD /* GameScene.m */; };
 		FA28EBD719F604D000026354 /* emptycell.png in Resources */ = {isa = PBXBuildFile; fileRef = FA28EBD619F604D000026354 /* emptycell.png */; };
 		FA28EBD919F604D600026354 /* shroomcell.png in Resources */ = {isa = PBXBuildFile; fileRef = FA28EBD819F604D600026354 /* shroomcell.png */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA1869751A0C605F00D4950F /* ScoreBoardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreBoardVC.h; sourceTree = "<group>"; };
+		FA1869761A0C605F00D4950F /* ScoreBoardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreBoardVC.m; sourceTree = "<group>"; };
+		FA1869781A0C650E00D4950F /* SettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsVC.h; sourceTree = "<group>"; };
+		FA1869791A0C650E00D4950F /* SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsVC.m; sourceTree = "<group>"; };
 		FA2539F319F673A30016F4FD /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		FA2539F419F673A30016F4FD /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		FA28EBD519F602A600026354 /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
@@ -110,6 +116,10 @@
 				FA290F0F19F5F586000C7420 /* ViewController.h */,
 				FA290F1019F5F586000C7420 /* ViewController.m */,
 				FA290F1219F5F586000C7420 /* Main.storyboard */,
+				FA1869751A0C605F00D4950F /* ScoreBoardVC.h */,
+				FA1869761A0C605F00D4950F /* ScoreBoardVC.m */,
+				FA1869781A0C650E00D4950F /* SettingsVC.h */,
+				FA1869791A0C650E00D4950F /* SettingsVC.m */,
 				FA290F1519F5F586000C7420 /* Images.xcassets */,
 				FA290F1719F5F586000C7420 /* LaunchScreen.xib */,
 				FA290F0C19F5F586000C7420 /* WigglyWormhole.xcdatamodeld */,
@@ -255,11 +265,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA290F3319F5F607000C7420 /* Game.m in Sources */,
+				FA18697A1A0C650E00D4950F /* SettingsVC.m in Sources */,
 				FA2539F519F673A30016F4FD /* GameScene.m in Sources */,
 				FA290F0B19F5F586000C7420 /* AppDelegate.m in Sources */,
 				FA290F0E19F5F586000C7420 /* WigglyWormhole.xcdatamodeld in Sources */,
 				FA290F1119F5F586000C7420 /* ViewController.m in Sources */,
 				FA290F0819F5F586000C7420 /* main.m in Sources */,
+				FA1869771A0C605F00D4950F /* ScoreBoardVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
