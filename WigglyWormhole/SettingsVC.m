@@ -48,6 +48,8 @@
     //init everyStepScore
     [self updateEveryStepScoreAndDiff];
     
+   
+    
     
     
 }
@@ -65,11 +67,29 @@
     self.everyStepScore.text=[NSString stringWithFormat:
                               @"%d",self.appDataModel.everyStepScore];
   
- 
-    
     /*
      update diff
      */
+   float diffvalue=(float)(self.appDataModel.everyStepScore-10)/235;
+    if (diffvalue<0.3) {
+        _diffLabel.text=[NSString stringWithFormat:@"%@",@"Novice"];
+    }
+    else if(diffvalue<0.6)
+    {
+          _diffLabel.text=[NSString stringWithFormat:@"%@",@"Professional"];
+    }
+    else if(diffvalue<0.8)
+    {
+        _diffLabel.text=[NSString stringWithFormat:@"%@",@"Expert"];
+    }
+    else if(diffvalue<1)
+    {
+        _diffLabel.text=[NSString stringWithFormat:@"%@",@"God Like"];
+    }
+    else
+    {
+         _diffLabel.text=[NSString stringWithFormat:@"%@",@"G O D"];
+    }
     
 }
 
@@ -106,6 +126,9 @@
     self.appDataModel.wormholes=wormholes;
     //update score
     [self updateEveryStepScoreAndDiff];
+    
+}
+- (IBAction)diffSliderChanged:(id)sender {
     
 }
 @end

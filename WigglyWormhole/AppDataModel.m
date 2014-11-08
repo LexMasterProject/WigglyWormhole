@@ -40,7 +40,7 @@
 {
      _everyStepScore=DEFAULT_EVERYSTEPSCORE+
     (self.mushroomNum-DEFAULT_MUSHROOM_NUMBER)
-    +(self.speed-DEFAULT_SPEED)*2
+    +(self.speed-DEFAULT_SPEED)*5
     +(self.wormholes-DEFAULT_WORMHOLES)*3;
 }
 

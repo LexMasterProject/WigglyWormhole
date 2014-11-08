@@ -38,6 +38,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *everyStepScore;
 
 
+@property (weak, nonatomic) IBOutlet UILabel *diffLabel;
+
+
+
 
 
 
