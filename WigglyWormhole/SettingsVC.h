@@ -14,16 +14,22 @@
 
 
 
-@property (weak, nonatomic) IBOutlet UILabel *diffLabel;
-@property (weak, nonatomic) IBOutlet UISlider *diffSlider;
 @property (weak) id <ModalViewControllerDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property(strong) AppDataModel*appDataModel;
+
+
 @property (weak, nonatomic) IBOutlet UILabel *mushroomLabel;
 @property (weak, nonatomic) IBOutlet UISlider *mushroomSlider;
-
-- (IBAction)sliderChanged:(id)sender;
 - (IBAction)sliderMushroomChanged:(id)sender;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *speedLabel;
+@property (weak, nonatomic) IBOutlet UISlider *speedSlider;
+- (IBAction)speedSliderChanged:(id)sender;
+
+
+
 
 @end

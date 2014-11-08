@@ -15,6 +15,7 @@
 @property (strong) NSString*title;
 @property (strong) NSMutableArray*map;
 @property (assign) int score;
+@property (assign) int speed;
 @property (assign) int wormDirection;
 @property (assign) int isWormDead;
 @property (assign) int mushroomNum;

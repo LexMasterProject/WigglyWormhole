@@ -38,11 +38,15 @@
 #define WORM_FACE_INDEX 3
 #define WORM_BODY_INDEX 4
 
+
 #define WORM_HOLE_NUMBER 5
+//game default
 #define DEFAULT_MUSHROOM_NUMBER 56
 #define DEFAULT_MUSHROOM_NUMBER_MAX 156
+#define DEFAULT_SPEED 2
+#define DEFAULT_SPEED_MAX 20
 
-typedef unsigned long ULONG;
+
 
 
 

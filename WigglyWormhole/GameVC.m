@@ -92,7 +92,7 @@
     {
         [self.nsCountDown invalidate];
         [_countDownLabel removeFromSuperview];
-        _nsTimer=[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(update) userInfo:nil repeats:true];
+        _nsTimer=[NSTimer scheduledTimerWithTimeInterval:1.0/(self.game.speed) target:self selector:@selector(update) userInfo:nil repeats:true];
     }
 }
 - (void)didReceiveMemoryWarning {

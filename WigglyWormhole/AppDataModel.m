@@ -15,11 +15,16 @@
     
     _scoreBoard=[[defaults objectForKey:@"scoreboard"]mutableCopy];
     _mushroomNum=[defaults integerForKey:@"mushroomNum"];
+    _speed=[defaults integerForKey:@"speed"];
    
     if (_mushroomNum==0) {
         _mushroomNum=DEFAULT_MUSHROOM_NUMBER;
-        NSLog(@"MUSHROOM DEFAULT");
+
     }
+    if (_speed==0) {
+        _speed=2;
+    }
+    NSLog(@"load defaults");
     
     }
     
@@ -28,6 +33,8 @@
 -(void)saveDefaults {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:_scoreBoard forKey:@"scoreboard"];
+    [defaults setInteger:_mushroomNum forKey:@"mushroomNum"];
+    [defaults setInteger:_speed forKey:@"speed"];
     [defaults synchronize];
     NSLog(@"defaults saved");
 }

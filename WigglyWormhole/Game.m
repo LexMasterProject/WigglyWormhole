@@ -26,7 +26,10 @@
         _title=GAME_TITLE;
         _score=0;
         _wormDirection=DOWN;
+        
+        //game config
         _mushroomNum=appModel.mushroomNum;
+        _speed=appModel.speed;
         
         
          NSMutableArray*head=[NSMutableArray arrayWithObjects:[NSNumber numberWithInt:10],

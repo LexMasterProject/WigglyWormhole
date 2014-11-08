@@ -24,38 +24,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    //init settings vc
+    
+    //init namefield
     _nameTextField.delegate = self;
     _nameTextField.text=@"Alex";
-    _diffSlider.value=0.5f;
-     _diffLabel.text=[NSString stringWithFormat:@"%.2f",_diffSlider.value];
     
-    
+    //init mushroom
     int mushroom=_appDataModel.mushroomNum;
     _mushroomLabel.text=[NSString stringWithFormat:@"%d",mushroom];
-    _mushroomSlider.value=(float)(mushroom-DEFAULT_MUSHROOM_NUMBER)/DEFAULT_MUSHROOM_NUMBER_MAX;
+    _mushroomSlider.value=(float)(mushroom-DEFAULT_MUSHROOM_NUMBER)/(DEFAULT_MUSHROOM_NUMBER_MAX-DEFAULT_MUSHROOM_NUMBER);
+    
+    //init speed
+    int speed=_appDataModel.speed;
+    _speedLabel.text=[NSString stringWithFormat:@"%d",speed];
+    _speedSlider.value=(float)(speed-DEFAULT_SPEED)/(DEFAULT_SPEED_MAX-DEFAULT_SPEED);
+    
     
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)sliderChanged:(id)sender {
-    _diffLabel.text=[NSString stringWithFormat:@"%.2f",_diffSlider.value];
-}
 
 - (IBAction)sliderMushroomChanged:(id)sender {
     float sliderValue=self.mushroomSlider.value;
@@ -64,7 +59,16 @@
     self.mushroomLabel.text=[NSString stringWithFormat:@"%d",mushroom];
     
     //update datamodel
-    
     self.appDataModel.mushroomNum=mushroom;
+}
+- (IBAction)speedSliderChanged:(id)sender {
+    
+    float sliderValue=self.speedSlider.value;
+    int speed=sliderValue*(DEFAULT_SPEED_MAX-DEFAULT_SPEED)+DEFAULT_SPEED;
+    
+    self.speedLabel.text=[NSString stringWithFormat:@"%d",speed];
+    
+    //update datamodel
+    self.appDataModel.speed=speed;
 }
 @end
