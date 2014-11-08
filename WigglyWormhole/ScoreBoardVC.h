@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDataModel.h"
+#import "ModalViewControllerDelegate.h"
 
 @interface ScoreBoardVC : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak) id <ModalViewControllerDelegate> delegate;
 @property(strong) NSMutableArray*scores;
+@property(strong) AppDataModel*appDataModel;
 
 @end

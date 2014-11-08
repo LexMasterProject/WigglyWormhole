@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Alex. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "GameVC.h"
 #import "Macro.h"
 
 
@@ -14,12 +14,12 @@
 
 
 #define _DEBUG
-@interface ViewController ()
+@interface GameVC ()
 
 
 @end
 
-@implementation ViewController
+@implementation GameVC
 
 
 - (void)viewDidLoad {
@@ -27,6 +27,7 @@
     
     //initial game
     _game=[[Game alloc]init];
+    _game.mushroomNum=self.appDataModel.mushroomNum;
   
     
 

@@ -1,40 +1,50 @@
 //
-//  SettingsVC.m
+//  MenuVC.m
 //  WigglyWormhole
 //
 //  Created by Alex on 07/11/2014.
 //  Copyright (c) 2014 Alex. All rights reserved.
 //
 
-#import "SettingsVC.h"
+#import "MenuVC.h"
+#import "ScoreBoardVC.h"
 
-@interface SettingsVC ()
+@interface MenuVC ()
 
 @end
 
-@implementation SettingsVC
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    NSLog(@"text");
-    return NO;
-}
-
+@implementation MenuVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _nameTextField.delegate = self;
-    _nameTextField.text=@"Alex";
-    _diffSlider.value=0.5f;
-     _diffLabel.text=[NSString stringWithFormat:@"%.2f",_diffSlider.value];
-    
+    _appDataModel=[[AppDataModel alloc]init];
+    [_appDataModel loadDefaults];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([[segue identifier]isEqualToString:@"goTopTen"])
+    {
+        ScoreBoardVC*vc=[segue destinationViewController];
+        vc.delegate=self;
+        self.appDataModel.speed=5;
+        vc.appDataModel=self.appDataModel;
+    }
+}
+
+-(void)dismiss
+{
+    [self.view setNeedsDisplay];
+   // [self dismissViewControllerAnimated:YES ];
+}
+
+
 
 /*
 #pragma mark - Navigation
@@ -46,7 +56,4 @@
 }
 */
 
-- (IBAction)sliderChanged:(id)sender {
-    _diffLabel.text=[NSString stringWithFormat:@"%.2f",_diffSlider.value];
-}
 @end

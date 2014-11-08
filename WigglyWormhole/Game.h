@@ -16,9 +16,10 @@
 @property (assign) int score;
 @property (assign) int wormDirection;
 @property (assign) int isWormDead;
+@property (assign) int mushroomNum;
 
 
-
+-(id)init:(int)mushroomNum;
 -(void)update;
 -(void)wormDown;
 -(void)wormUp;

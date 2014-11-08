@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "Game.h"
 #import "GameScene.h"
+#import "ModalViewControllerDelegate.h"
+#import "AppDataModel.h"
 
-@interface ViewController : UIViewController<UIGestureRecognizerDelegate>
+@interface GameVC : UIViewController<UIGestureRecognizerDelegate>
 
 @property (strong)Game*game;
 @property (strong) GameScene*gameScene;
@@ -18,6 +20,8 @@
 @property (strong) NSTimer*nsCountDown;
 @property (strong) UILabel*countDownLabel;
 @property (assign) int countDownSec;
+@property (weak) id <ModalViewControllerDelegate> delegate;
+@property(strong) AppDataModel*appDataModel;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *uiGameTitle;

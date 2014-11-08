@@ -20,14 +20,13 @@
     
 }
 
-
 -(id)init
 {
     if (self=[super init]) {
         _title=GAME_TITLE;
         _score=0;
         _wormDirection=DOWN;
-        
+        NSLog(@"game init");
         
          NSMutableArray*head=[NSMutableArray arrayWithObjects:[NSNumber numberWithInt:10],
              [NSNumber numberWithInt:7],
@@ -42,6 +41,7 @@
         for (int i=0; i<SCENE_CELLS_Y*SCENE_CELLS_X; i++) {
             [_emptyCell addObject:[NSNumber numberWithInt:i]];
         }
+     
        [self initMap];
         
       
@@ -80,9 +80,10 @@
         
     }
 
-    for (int i=0; i<MUSHROOM_NUMBER;i++ ) {
+    for (int i=0; i<self.mushroomNum;i++ ) {
         [self generateNewMushroom];
     }
+   
 }
 
 -(void)generateNewMushroom
