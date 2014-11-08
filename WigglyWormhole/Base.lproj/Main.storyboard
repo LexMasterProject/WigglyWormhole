@@ -285,6 +285,9 @@
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="QMB-da-FKK">
                                 <rect key="frame" x="117" y="372" width="118" height="31"/>
+                                <connections>
+                                    <action selector="wormholeSliderChanged:" destination="jze-JS-PNd" eventType="valueChanged" id="MC5-Mx-5tu"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="wormhole" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRY-uE-nnb">
                                 <rect key="frame" x="21" y="376" width="76" height="21"/>
@@ -332,11 +335,14 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="enk-r4-xC0"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="everyStepScore" destination="iTx-gq-J25" id="kxH-yP-7kK"/>
                         <outlet property="mushroomLabel" destination="YkS-Ax-YYE" id="akS-uZ-aUT"/>
                         <outlet property="mushroomSlider" destination="qvm-kx-w3P" id="Nzg-TB-GXd"/>
                         <outlet property="nameTextField" destination="ISE-dI-Orb" id="C3s-JH-jF3"/>
                         <outlet property="speedLabel" destination="Cd7-sn-xrp" id="bDc-i6-yf0"/>
                         <outlet property="speedSlider" destination="ZWe-gZ-arf" id="aOo-Pk-Qhq"/>
+                        <outlet property="wormholeLabel" destination="BMT-Uj-u3V" id="lxd-Uc-aqq"/>
+                        <outlet property="wormholeSlider" destination="QMB-da-FKK" id="HrL-c5-obO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ke2-bn-ZON" userLabel="First Responder" sceneMemberID="firstResponder"/>

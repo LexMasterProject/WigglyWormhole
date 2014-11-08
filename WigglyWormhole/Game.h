@@ -16,9 +16,11 @@
 @property (strong) NSMutableArray*map;
 @property (assign) int score;
 @property (assign) int speed;
+@property (assign) int everyStepScore;
 @property (assign) int wormDirection;
 @property (assign) int isWormDead;
 @property (assign) int mushroomNum;
+@property (assign) int wormholeNum;
 @property (strong) AppDataModel*appdataModel;
 
 

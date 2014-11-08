@@ -120,7 +120,7 @@
     }
     
 }
-//#define ANIMATION_WORM_OPTIONS (UIViewAnimationOptionCurveLinear|UIViewAnimationOptionBeginFromCurrentState)
+
 - (IBAction)pressUp:(id)sender {
     [self.game wormUp];
    

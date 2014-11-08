@@ -26,10 +26,14 @@
         _title=GAME_TITLE;
         _score=0;
         _wormDirection=DOWN;
-        
+       
+        self.appdataModel=appModel;
         //game config
         _mushroomNum=appModel.mushroomNum;
         _speed=appModel.speed;
+        _wormholeNum=appModel.wormholes;
+        _everyStepScore=appModel.everyStepScore;
+       
         
         
          NSMutableArray*head=[NSMutableArray arrayWithObjects:[NSNumber numberWithInt:10],
@@ -73,7 +77,7 @@
      [_emptyCell removeObjectAtIndex:10*14+7];
       _map[10][7]=[NSNumber numberWithInt:WORM_FACE_INDEX];
     
-    for (int i=0; i<WORM_HOLE_NUMBER;i++) {
+    for (int i=0; i<self.wormholeNum;i++) {
         int index=RAND_FROM_TO(0, [_emptyCell count]-1);
         int posInfo=[_emptyCell[index] integerValue];
         int x=posInfo/14;
@@ -187,7 +191,8 @@
     else
     {
     [self updateMapAndWormWithNextX:nextx andY:nexty];
-    _score+=10;
+    _score+=self.everyStepScore;
+      
     }
 }
 

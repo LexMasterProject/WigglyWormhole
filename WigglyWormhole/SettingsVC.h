@@ -30,6 +30,15 @@
 - (IBAction)speedSliderChanged:(id)sender;
 
 
+@property (weak, nonatomic) IBOutlet UILabel *wormholeLabel;
+@property (weak, nonatomic) IBOutlet UISlider *wormholeSlider;
+- (IBAction)wormholeSliderChanged:(id)sender;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *everyStepScore;
+
+
+
 
 
 @end

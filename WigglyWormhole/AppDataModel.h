@@ -14,8 +14,11 @@
 @property (assign) int speed;
 @property (assign) int wormholes;
 @property (assign) int mushroomNum;
+@property (assign) int everyStepScore;
 @property (assign) int currentScore;
 
+
+-(void)updateEveryStepScore;
 -(void)isTopTen;
 -(void)updateTopTen;
 -(void)loadDefaults;

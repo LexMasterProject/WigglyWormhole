@@ -17,7 +17,6 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
-    NSLog(@"text");
     return NO;
 }
 
@@ -41,6 +40,14 @@
     _speedLabel.text=[NSString stringWithFormat:@"%d",speed];
     _speedSlider.value=(float)(speed-DEFAULT_SPEED)/(DEFAULT_SPEED_MAX-DEFAULT_SPEED);
     
+    //init wormholes
+    int wormholes=_appDataModel.wormholes;
+    _wormholeLabel.text=[NSString stringWithFormat:@"%d",wormholes];
+    _wormholeSlider.value=(float)(wormholes-DEFAULT_WORMHOLES)/(DEFAULT_WORMHOLES_MAX-DEFAULT_WORMHOLES);
+    
+    //init everyStepScore
+    [self updateEveryStepScoreAndDiff];
+    
     
     
 }
@@ -51,6 +58,20 @@
 }
 
 
+-(void)updateEveryStepScoreAndDiff
+{
+    
+    [self.appDataModel updateEveryStepScore];
+    self.everyStepScore.text=[NSString stringWithFormat:
+                              @"%d",self.appDataModel.everyStepScore];
+  
+ 
+    
+    /*
+     update diff
+     */
+    
+}
 
 - (IBAction)sliderMushroomChanged:(id)sender {
     float sliderValue=self.mushroomSlider.value;
@@ -60,6 +81,8 @@
     
     //update datamodel
     self.appDataModel.mushroomNum=mushroom;
+    //update score
+    [self updateEveryStepScoreAndDiff];
 }
 - (IBAction)speedSliderChanged:(id)sender {
     
@@ -70,5 +93,19 @@
     
     //update datamodel
     self.appDataModel.speed=speed;
+    //update score
+    [self updateEveryStepScoreAndDiff];
+}
+- (IBAction)wormholeSliderChanged:(id)sender {
+    float sliderValue=self.wormholeSlider.value;
+    int wormholes=sliderValue*(DEFAULT_WORMHOLES_MAX-DEFAULT_WORMHOLES)+DEFAULT_WORMHOLES;
+    
+    self.wormholeLabel.text=[NSString stringWithFormat:@"%d",wormholes];
+    
+    //update datamodel
+    self.appDataModel.wormholes=wormholes;
+    //update score
+    [self updateEveryStepScoreAndDiff];
+    
 }
 @end
