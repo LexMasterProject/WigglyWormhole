@@ -16,6 +16,7 @@
 @implementation SettingsVC
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    self.appDataModel.usrName=textField.text;
     [textField resignFirstResponder];
     return NO;
 }
@@ -28,7 +29,7 @@
     
     //init namefield
     _nameTextField.delegate = self;
-    _nameTextField.text=@"Alex";
+    _nameTextField.text=_appDataModel.usrName;
     
     //init mushroom
     int mushroom=_appDataModel.mushroomNum;

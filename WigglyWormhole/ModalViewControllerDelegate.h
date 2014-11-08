@@ -1,9 +1,9 @@
 //
-//  ModalViewControllerDelegate.h
-//  ModalSegueExample
 //
-//  Created by Guy Brown on 15/10/2012.
-//  Copyright (c) 2012 Guy Brown. All rights reserved.
+//  WigglyWormhole
+//
+//  Created by Alex on 21/10/2014.
+//  Copyright (c) 2014 Alex. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

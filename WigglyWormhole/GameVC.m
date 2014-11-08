@@ -107,8 +107,27 @@
     [self.gameScene setNeedsDisplay];
     
     if (self.game.wormDirection==DIRECTION_NONE) {
-        NSString*alertMsg=[NSString stringWithFormat:@"You scored %d",self.game.score];
-        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:@"Oh no, you died!"
+        
+        NSString*alertTitle=nil;
+        NSString*alertMsg=nil;
+        
+        BOOL topten=[self.appDataModel isTopTen:self.game.score];
+        if (topten) {
+            alertTitle=[NSString stringWithFormat:@"Well done, %@!\nU enter TopTen!!!",self.appDataModel.usrName];
+            alertMsg=[NSString stringWithFormat:@"You scored %d",self.game.score];
+           
+            [self.appDataModel updateTopTen:self.game.score];
+            
+            
+        }
+        else
+        {
+            alertTitle=[NSString stringWithFormat:@"Oh no, you died!\nTry harder to enter top ten"];
+            alertMsg=[NSString stringWithFormat:@"You scored %d",self.game.score];
+           
+
+        }
+          UIAlertView* alert=[[UIAlertView alloc] initWithTitle:alertTitle
                                                       message:alertMsg
                                                      delegate:self
                                             cancelButtonTitle:@"OK"

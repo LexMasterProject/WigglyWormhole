@@ -20,7 +20,9 @@
     if (cell==nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:myIdentifier];
     }
-    cell.textLabel.text = [self.scores objectAtIndex:indexPath.row];
+    
+    NSString* cellText= [[NSString alloc]initWithFormat:@"%@",[self.scores objectAtIndex:indexPath.row]];
+    cell.textLabel.text = cellText;
     return cell;
 }
 
@@ -30,6 +32,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.scores=self.appDataModel.scoreBoard;
+    
     
 }
 
@@ -39,12 +43,7 @@
 }
 -(void)loadView
 {
-    self.scores=[NSMutableArray arrayWithObjects:
-                 @"1",
-                 @"2",
-                 @"3",
-                 nil];
-    
+  
     UITableView*tableView=[[UITableView alloc]initWithFrame:[[UIScreen mainScreen]applicationFrame] style:UITableViewStylePlain];
     tableView.delegate=self;
     tableView.dataSource=self;

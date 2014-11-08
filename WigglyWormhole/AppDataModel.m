@@ -17,6 +17,7 @@
     _mushroomNum=[defaults integerForKey:@"mushroomNum"];
     _speed=[defaults integerForKey:@"speed"];
     _wormholes=[defaults integerForKey:@"wormholes"];
+    _usrName=[defaults stringForKey:@"usrName"];
    
     if (_mushroomNum==0) {
         _mushroomNum=DEFAULT_MUSHROOM_NUMBER;
@@ -29,6 +30,14 @@
     
     if (_wormholes==0) {
         _wormholes=DEFAULT_WORMHOLES;
+    }
+    
+    if (_scoreBoard==nil) {
+        _scoreBoard=[[NSMutableArray alloc]init];
+    }
+    
+    if (_usrName==nil) {
+        _usrName=[[NSString alloc]initWithFormat:@"Alex"];
     }
     
     [self updateEveryStepScore];
@@ -50,17 +59,18 @@
     [defaults setInteger:_mushroomNum forKey:@"mushroomNum"];
     [defaults setInteger:_speed forKey:@"speed"];
     [defaults setInteger:_wormholes forKey:@"wormholes"];
+    [defaults setObject:_usrName forKey:@"usrName"];
     [defaults synchronize];
     NSLog(@"defaults saved");
 }
 
--(void)isTopTen
+-(BOOL)isTopTen:(int)score
 {
-    
+    return true;
 }
--(void)updateTopTen
+-(void)updateTopTen:(int)score
 {
-    
+    [self.scoreBoard insertObject:[NSNumber numberWithInt:score] atIndex:0];
 }
 
 

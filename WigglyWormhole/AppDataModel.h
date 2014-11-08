@@ -15,12 +15,14 @@
 @property (assign) int wormholes;
 @property (assign) int mushroomNum;
 @property (assign) int everyStepScore;
-@property (assign) int currentScore;
+@property (strong) NSString*usrName;
+
+
 
 
 -(void)updateEveryStepScore;
--(void)isTopTen;
--(void)updateTopTen;
+-(BOOL)isTopTen:(int)score;
+-(void)updateTopTen:(int)score;
 -(void)loadDefaults;
 -(void)saveDefaults;
 @end
