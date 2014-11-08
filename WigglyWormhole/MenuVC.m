@@ -8,6 +8,8 @@
 
 #import "MenuVC.h"
 #import "ScoreBoardVC.h"
+#import "GameVC.h"
+#import "SettingsVC.h"
 
 @interface MenuVC ()
 
@@ -37,10 +39,17 @@
     }
     else  if([[segue identifier]isEqualToString:@"goGameVC"])
     {
-        ScoreBoardVC*vc=[segue destinationViewController];
+        GameVC*vc=[segue destinationViewController];
         vc.delegate=self;
         vc.appDataModel=self.appDataModel;
     }
+    else  if([[segue identifier]isEqualToString:@"goSettings"])
+    {
+        SettingsVC*vc=[segue destinationViewController];
+        vc.delegate=self;
+        vc.appDataModel=self.appDataModel;
+    }
+ 
 }
 
 -(void)dismiss

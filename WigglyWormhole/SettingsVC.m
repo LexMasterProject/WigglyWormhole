@@ -7,6 +7,7 @@
 //
 
 #import "SettingsVC.h"
+#import "Macro.h"
 
 @interface SettingsVC ()
 
@@ -29,6 +30,12 @@
     _diffSlider.value=0.5f;
      _diffLabel.text=[NSString stringWithFormat:@"%.2f",_diffSlider.value];
     
+    
+    int mushroom=_appDataModel.mushroomNum;
+    _mushroomLabel.text=[NSString stringWithFormat:@"%d",mushroom];
+    _mushroomSlider.value=(float)(mushroom-DEFAULT_MUSHROOM_NUMBER)/DEFAULT_MUSHROOM_NUMBER_MAX;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,5 +55,16 @@
 
 - (IBAction)sliderChanged:(id)sender {
     _diffLabel.text=[NSString stringWithFormat:@"%.2f",_diffSlider.value];
+}
+
+- (IBAction)sliderMushroomChanged:(id)sender {
+    float sliderValue=self.mushroomSlider.value;
+    int mushroom=sliderValue*(DEFAULT_MUSHROOM_NUMBER_MAX-DEFAULT_MUSHROOM_NUMBER)+DEFAULT_MUSHROOM_NUMBER;
+    
+    self.mushroomLabel.text=[NSString stringWithFormat:@"%d",mushroom];
+    
+    //update datamodel
+    
+    self.appDataModel.mushroomNum=mushroom;
 }
 @end

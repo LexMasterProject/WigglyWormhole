@@ -40,6 +40,7 @@
 
 #define WORM_HOLE_NUMBER 5
 #define DEFAULT_MUSHROOM_NUMBER 56
+#define DEFAULT_MUSHROOM_NUMBER_MAX 156
 
 typedef unsigned long ULONG;
 
