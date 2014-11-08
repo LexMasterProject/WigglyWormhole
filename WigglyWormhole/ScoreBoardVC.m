@@ -21,7 +21,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:myIdentifier];
     }
     
-    NSString* cellText= [[NSString alloc]initWithFormat:@"%@",[self.scores objectAtIndex:indexPath.row]];
+    NSArray*scoreArr=[self.scores objectAtIndex:indexPath.row];
+    NSString* cellText= [[NSString alloc]initWithFormat:@"Rank %d:  %@  %@",indexPath.row+1,[scoreArr objectAtIndex:0],[scoreArr objectAtIndex:1]];
     cell.textLabel.text = cellText;
     return cell;
 }

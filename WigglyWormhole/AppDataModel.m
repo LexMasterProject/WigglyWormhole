@@ -66,11 +66,35 @@
 
 -(BOOL)isTopTen:(int)score
 {
-    return true;
+    if ([_scoreBoard count]<10) {
+        return true;
+    }
+    
+    int last=[[_scoreBoard objectAtIndex:9] integerValue];
+    if (score>last) {
+        return true;
+    }
+    return  false;
+    
 }
 -(void)updateTopTen:(int)score
 {
-    [self.scoreBoard insertObject:[NSNumber numberWithInt:score] atIndex:0];
+    NSArray*cell=[[NSArray alloc]initWithObjects:
+                  [[NSString alloc]initWithString:self.usrName],
+                  [[NSNumber alloc]initWithInt:score],
+                  nil];
+    [self.scoreBoard addObject:cell];
+    [self.scoreBoard sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        int first=[(NSNumber*)([(NSArray*)obj1 objectAtIndex:1]) integerValue];
+        int sec=[(NSNumber*)([(NSArray*)obj2 objectAtIndex:1]) integerValue];
+        return first<sec;
+    }];
+    
+    if ([self.scoreBoard count]>10) {
+        [self.scoreBoard removeLastObject];
+    }
+    
+    
 }
 
 
