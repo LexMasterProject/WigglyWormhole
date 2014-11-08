@@ -33,7 +33,12 @@
     {
         ScoreBoardVC*vc=[segue destinationViewController];
         vc.delegate=self;
-        self.appDataModel.speed=5;
+        vc.appDataModel=self.appDataModel;
+    }
+    else  if([[segue identifier]isEqualToString:@"goGameVC"])
+    {
+        ScoreBoardVC*vc=[segue destinationViewController];
+        vc.delegate=self;
         vc.appDataModel=self.appDataModel;
     }
 }

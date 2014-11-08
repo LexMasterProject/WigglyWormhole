@@ -20,13 +20,14 @@
     
 }
 
--(id)init
+-(id)initWithCofig:(AppDataModel*)appModel
 {
     if (self=[super init]) {
         _title=GAME_TITLE;
         _score=0;
         _wormDirection=DOWN;
-        NSLog(@"game init");
+        _mushroomNum=appModel.mushroomNum;
+        
         
          NSMutableArray*head=[NSMutableArray arrayWithObjects:[NSNumber numberWithInt:10],
              [NSNumber numberWithInt:7],

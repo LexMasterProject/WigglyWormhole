@@ -26,8 +26,8 @@
     [super viewDidLoad];
     
     //initial game
-    _game=[[Game alloc]init];
-    _game.mushroomNum=self.appDataModel.mushroomNum;
+    _game=[[Game alloc]initWithCofig:self.appDataModel];
+    
   
     
 
@@ -63,7 +63,7 @@
 
 -(void)loadGame
 {
-    _game=[[Game alloc]init];
+    _game=[[Game alloc]initWithCofig:self.appDataModel];
     self.gameScene.map=self.game.map;
     self.uiGameScore.text=[NSString stringWithFormat:@"%5d",self.game.score];
     [self.gameScene setNeedsDisplay];

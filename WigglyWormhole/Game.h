@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "AppDataModel.h"
 
 @interface Game : NSObject
 
@@ -17,9 +18,10 @@
 @property (assign) int wormDirection;
 @property (assign) int isWormDead;
 @property (assign) int mushroomNum;
+@property (strong) AppDataModel*appdataModel;
 
 
--(id)init:(int)mushroomNum;
+-(id)initWithCofig:(AppDataModel*)appModel;
 -(void)update;
 -(void)wormDown;
 -(void)wormUp;
