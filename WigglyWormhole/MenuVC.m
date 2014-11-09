@@ -50,6 +50,14 @@
         vc.delegate=self;
         vc.appDataModel=self.appDataModel;
     }
+    else  if([[segue identifier]isEqualToString:@"goAI"])
+    {
+        GameVC*vc=[segue destinationViewController];
+        vc.delegate=self;
+        vc.appDataModel=self.appDataModel;
+        vc.aiEnabled=TRUE;
+    }
+
  
 }
 

@@ -49,12 +49,20 @@
     _gameScene=[[GameScene alloc]initWithFrame:sceneRect withMap:self.game.map];
     _gameScene.backgroundColor=[UIColor whiteColor];
     
+    //gameai
+    if (self.aiEnabled) {
+        _gameAI=[[GameAI alloc]init];
+    }
+    
     //gameScene adjust
     _gameScene.transform=CGAffineTransformScale(_gameScene.transform, 0.8, 0.8);
     _gameScene.transform=CGAffineTransformTranslate(_gameScene.transform, -35, -60);
     [self.view addSubview:_gameScene];
     [self loadGame];
     self.navigationController.navigationBarHidden=YES;
+    
+  
+    
     
 
     
@@ -100,7 +108,22 @@
 }
 -(void)update
 {
-   
+    if (self.aiEnabled) {
+        self.gameAI.map=self.game.map;
+        int direction=[self.gameAI shouldMoveDirection];
+        switch (direction) {
+            case UP:
+                [self.game wormUp];
+                break;
+            case DOWN:
+                [self.game wormDown];
+                break;
+            case RIGHT:
+                [self.game wormRight];
+            case LEFT:
+                [self.game wormLeft];
+        }
+    }
     [self.game update];
     self.uiGameScore.text=[NSString stringWithFormat:@"%5d",self.game.score];
     self.gameScene.map=self.game.map;
@@ -112,22 +135,38 @@
         NSString*alertMsg=nil;
         
         BOOL topten=[self.appDataModel isTopTen:self.game.score];
-        if (topten) {
-            alertTitle=[NSString stringWithFormat:@"Well done, %@!\nU enter TopTen!!!",self.appDataModel.usrName];
-            alertMsg=[NSString stringWithFormat:@"You scored %d",self.game.score];
-           
-            [self.appDataModel updateTopTen:self.game.score];
-            
-            
+        if (!self.aiEnabled) {
+            if (topten) {
+                alertTitle=[NSString stringWithFormat:@"Well done, %@!\nU enter TopTen!!!",self.appDataModel.usrName];
+                alertMsg=[NSString stringWithFormat:@"You scored %d",self.game.score];
+                
+                [self.appDataModel updateTopTen:self.game.score];
+                
+                
+            }
+            else
+            {
+                alertTitle=[NSString stringWithFormat:@"Oh no, you died!\nTry harder to enter top ten"];
+                alertMsg=[NSString stringWithFormat:@"You scored %d",self.game.score];
+                
+                
+            }
+
         }
         else
         {
-            alertTitle=[NSString stringWithFormat:@"Oh no, you died!\nTry harder to enter top ten"];
-            alertMsg=[NSString stringWithFormat:@"You scored %d",self.game.score];
-           
+            if (topten) {
+                alertTitle=[NSString stringWithFormat:@"Try harder, %@!\nAI enter TopTen!!!",self.appDataModel.usrName];
+                alertMsg=[NSString stringWithFormat:@"AI scored %d",self.game.score];
+            }
+            else
+            {
+                alertTitle=[NSString stringWithFormat:@"Stupid AI!!!"];
+                alertMsg=[NSString stringWithFormat:@"AI scored %d",self.game.score];
 
+            }
         }
-          UIAlertView* alert=[[UIAlertView alloc] initWithTitle:alertTitle
+                 UIAlertView* alert=[[UIAlertView alloc] initWithTitle:alertTitle
                                                       message:alertMsg
                                                      delegate:self
                                             cancelButtonTitle:@"OK"
@@ -141,22 +180,31 @@
 }
 
 - (IBAction)pressUp:(id)sender {
-    [self.game wormUp];
+    if (!self.aiEnabled) {
+       [self.game wormUp];
+    }
+    
    
   
 }
 - (IBAction)pressRight:(id)sender {
-    [self.game wormRight];
+    if (!self.aiEnabled) {
+        [self.game wormRight];
+    }
 
 }
 
 - (IBAction)pressDown:(id)sender {
-    [self.game wormDown];
+    if (!self.aiEnabled) {
+        [self.game wormDown];
+    }
    
 }
 
 - (IBAction)pressLeft:(id)sender {
-    [self.game wormLeft];
+    if (!self.aiEnabled) {
+        [self.game wormLeft];
+    }
    
 }
 

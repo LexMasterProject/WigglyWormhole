@@ -11,6 +11,7 @@
 #import "GameScene.h"
 #import "ModalViewControllerDelegate.h"
 #import "AppDataModel.h"
+#import "GameAI.h"
 
 @interface GameVC : UIViewController<UIGestureRecognizerDelegate>
 
@@ -22,6 +23,8 @@
 @property (assign) int countDownSec;
 @property (weak) id <ModalViewControllerDelegate> delegate;
 @property(strong) AppDataModel*appDataModel;
+@property (assign) BOOL aiEnabled;
+@property (strong) GameAI*gameAI;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *uiGameTitle;

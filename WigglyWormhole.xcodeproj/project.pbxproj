@@ -26,6 +26,7 @@
 		FA290F3319F5F607000C7420 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = FA290F3219F5F607000C7420 /* Game.m */; };
 		FA64B6981A0CC1220011AC86 /* MenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA64B6971A0CC1220011AC86 /* MenuVC.m */; };
 		FA64B69B1A0CC6830011AC86 /* AppDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA64B69A1A0CC6830011AC86 /* AppDataModel.m */; };
+		FA799BA51A0EFE830038A66F /* GameAI.m in Sources */ = {isa = PBXBuildFile; fileRef = FA799BA41A0EFE830038A66F /* GameAI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		FA64B6971A0CC1220011AC86 /* MenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuVC.m; sourceTree = "<group>"; };
 		FA64B6991A0CC6830011AC86 /* AppDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDataModel.h; sourceTree = "<group>"; };
 		FA64B69A1A0CC6830011AC86 /* AppDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDataModel.m; sourceTree = "<group>"; };
+		FA799BA31A0EFE830038A66F /* GameAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameAI.h; sourceTree = "<group>"; };
+		FA799BA41A0EFE830038A66F /* GameAI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameAI.m; sourceTree = "<group>"; };
 		FA8C77A71A0DB49E00F50DBB /* ModalViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModalViewControllerDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +126,8 @@
 				FA290F0A19F5F586000C7420 /* AppDelegate.m */,
 				FA290F0F19F5F586000C7420 /* GameVC.h */,
 				FA290F1019F5F586000C7420 /* GameVC.m */,
+				FA799BA31A0EFE830038A66F /* GameAI.h */,
+				FA799BA41A0EFE830038A66F /* GameAI.m */,
 				FA64B6961A0CC1220011AC86 /* MenuVC.h */,
 				FA64B6971A0CC1220011AC86 /* MenuVC.m */,
 				FA290F1219F5F586000C7420 /* Main.storyboard */,
@@ -281,6 +286,7 @@
 				FA2539F519F673A30016F4FD /* GameScene.m in Sources */,
 				FA64B6981A0CC1220011AC86 /* MenuVC.m in Sources */,
 				FA290F0B19F5F586000C7420 /* AppDelegate.m in Sources */,
+				FA799BA51A0EFE830038A66F /* GameAI.m in Sources */,
 				FA64B69B1A0CC6830011AC86 /* AppDataModel.m in Sources */,
 				FA290F0E19F5F586000C7420 /* WigglyWormhole.xcdatamodeld in Sources */,
 				FA290F1119F5F586000C7420 /* GameVC.m in Sources */,

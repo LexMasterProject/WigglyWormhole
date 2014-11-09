@@ -108,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-511" y="-130"/>
+            <point key="canvasLocation" x="-1194" y="-69"/>
         </scene>
         <!--ScoreBoard-->
         <scene sceneID="7PP-Az-np0">
@@ -138,33 +138,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Myd-fr-FgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-117" y="707"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Q08-3Y-OdU">
-            <objects>
-                <viewController id="lgW-Ky-c7S" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3CG-Kp-CAp"/>
-                        <viewControllerLayoutGuide type="bottom" id="pEI-TN-rNN"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="grw-K0-4i0">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="todo demo play" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtB-c1-In1">
-                                <rect key="frame" x="69" y="197" width="121" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="fc0-r1-FWU"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0WS-G6-qVf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-412" y="1648"/>
         </scene>
         <!--MenuVC-->
         <scene sceneID="1W0-pO-S3b">
@@ -196,15 +169,6 @@
                                     <segue destination="Z68-yn-vog" kind="push" identifier="goTopTen" id="NV8-JC-ymC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6MO-kL-amF">
-                                <rect key="frame" x="120" y="310" width="47" height="30"/>
-                                <state key="normal" title="AI play">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="lgW-Ky-c7S" kind="push" id="JTK-Z7-DCg"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Vw-71-iG4">
                                 <rect key="frame" x="120" y="272" width="57" height="30"/>
                                 <state key="normal" title="Settings">
@@ -214,6 +178,15 @@
                                     <segue destination="jze-JS-PNd" kind="push" identifier="goSettings" id="vig-QN-fIV"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6MO-kL-amF">
+                                <rect key="frame" x="120" y="305" width="47" height="30"/>
+                                <state key="normal" title="AI play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="push" identifier="goAI" id="qCU-4F-bGv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -221,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qwb-FP-zMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1410" y="452"/>
+            <point key="canvasLocation" x="-1457" y="543"/>
         </scene>
         <!--Settings-->
         <scene sceneID="IDI-R4-gKY">
@@ -364,4 +337,7 @@
             <point key="canvasLocation" x="-2130" y="170"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="qCU-4F-bGv"/>
+    </inferredMetricsTieBreakers>
 </document>
