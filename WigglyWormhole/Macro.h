@@ -20,6 +20,7 @@
 #define SCENE_CELLS_Y 20
 
 //direction
+#define DIRECTION_INIT -1
 #define UP 0
 #define LEFT 1
 #define RIGHT 2
@@ -48,6 +49,9 @@
 #define DEFAULT_WORMHOLES 5
 #define DEFAULT_WORMHOLES_MAX 20
 #define DEFAULT_EVERYSTEPSCORE 10
+
+//algorithms
+
 
 
 

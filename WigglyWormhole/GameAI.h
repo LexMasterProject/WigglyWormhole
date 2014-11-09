@@ -11,6 +11,7 @@
 @interface GameAI : NSObject
 @property(weak) NSMutableArray* map;
 @property(weak) NSMutableArray* headpos;
+@property(assign)int lastOp;
 
 -(int)shouldMoveDirection;
 @end
