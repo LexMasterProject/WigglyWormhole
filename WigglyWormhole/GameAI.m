@@ -11,10 +11,26 @@
 @implementation GameAI
 -(int)shouldMoveDirection
 {
-    static int a=0;
-    a++;
-    a=a%4;
-    return a;
+  
+    if ([self.map count]&&[self.headpos count]) {
+        int x=[[self.headpos objectAtIndex:0]integerValue];
+        int y=[[self.headpos objectAtIndex:1]integerValue];
+        
+        
+        int upEmptyNum=0;
+        int downEmptyNum=0;
+        int leftEmptyNum=0;
+        int rightEmptyNum=0;
+        
+        NSLog(@"%d",[[[self.map objectAtIndex:x]objectAtIndex:y]integerValue]);
+        
+        
+        
+        
+        
+    }
+  
+    return 3;
     
 }
 

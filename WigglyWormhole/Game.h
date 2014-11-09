@@ -22,6 +22,7 @@
 @property (assign) int mushroomNum;
 @property (assign) int wormholeNum;
 @property (strong) AppDataModel*appdataModel;
+@property (strong) NSMutableArray*headPosArr;
 
 
 -(id)initWithCofig:(AppDataModel*)appModel;

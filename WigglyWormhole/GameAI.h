@@ -10,6 +10,7 @@
 
 @interface GameAI : NSObject
 @property(weak) NSMutableArray* map;
+@property(weak) NSMutableArray* headpos;
 
 -(int)shouldMoveDirection;
 @end

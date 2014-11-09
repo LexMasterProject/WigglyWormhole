@@ -110,6 +110,7 @@
 {
     if (self.aiEnabled) {
         self.gameAI.map=self.game.map;
+        self.gameAI.headpos=self.game.headPosArr;
         int direction=[self.gameAI shouldMoveDirection];
         switch (direction) {
             case UP:

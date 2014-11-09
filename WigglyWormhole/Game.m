@@ -43,6 +43,7 @@
         _wormArr=[NSMutableArray arrayWithObjects:
                   head,
                   nil];
+        _headPosArr=[[NSMutableArray alloc]init];
         
         
         _emptyCell=[NSMutableArray arrayWithCapacity:SCENE_CELLS_X*SCENE_CELLS_Y];
@@ -109,6 +110,10 @@
 {
     int headx=[_wormArr[0][0] integerValue];
     int heady=[_wormArr[0][1] integerValue];
+    [self.headPosArr removeAllObjects];
+    [self.headPosArr addObject:[NSNumber numberWithInt:nextx]];
+    [self.headPosArr addObject:[NSNumber numberWithInt:nexty]];
+    
     int tailx=[[_wormArr lastObject][0] integerValue];
     int taily=[[_wormArr lastObject][1] integerValue];
     
