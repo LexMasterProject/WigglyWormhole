@@ -1,4 +1,4 @@
-//
+//full name:WEI Wuhao
 //  AppDataModel.m
 //  WigglyWormhole
 //
@@ -70,7 +70,7 @@
         return true;
     }
     
-    int last=[[_scoreBoard objectAtIndex:9] integerValue];
+    int last=[[[_scoreBoard objectAtIndex:9] objectAtIndex:1]integerValue];
     if (score>last) {
         return true;
     }
@@ -85,8 +85,8 @@
                   nil];
     [self.scoreBoard addObject:cell];
     [self.scoreBoard sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        int first=[(NSNumber*)([(NSArray*)obj1 objectAtIndex:1]) integerValue];
-        int sec=[(NSNumber*)([(NSArray*)obj2 objectAtIndex:1]) integerValue];
+        int first=[((NSNumber*)([(NSArray*)obj1 objectAtIndex:1])) integerValue];
+        int sec=[((NSNumber*)([(NSArray*)obj2 objectAtIndex:1])) integerValue];
         return first<sec;
     }];
     

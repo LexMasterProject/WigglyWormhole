@@ -1,4 +1,4 @@
-//
+//full name:WEI Wuhao
 //  ScoreBoardVC.h
 //  WigglyWormhole
 //
@@ -14,6 +14,6 @@
 
 @property (weak) id <ModalViewControllerDelegate> delegate;
 @property(strong) NSMutableArray*scores;
-@property(strong) AppDataModel*appDataModel;
+
 
 @end

@@ -1,4 +1,4 @@
-//
+//full name:WEI Wuhao
 //  ScoreBoardVC.m
 //  WigglyWormhole
 //
@@ -21,19 +21,21 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:myIdentifier];
     }
     
-    NSArray*scoreArr=[self.scores objectAtIndex:indexPath.row];
-    NSString* cellText= [[NSString alloc]initWithFormat:@"Rank %d:  %@  %@",indexPath.row+1,[scoreArr objectAtIndex:0],[scoreArr objectAtIndex:1]];
+    
+    NSArray*scoreArr=[self.scores objectAtIndex:indexPath.row ];
+   NSString* cellText= [[NSString alloc]initWithFormat:@"Rank %d:  %@  %@",indexPath.row+1,[scoreArr objectAtIndex:0],[scoreArr objectAtIndex:1]];
     cell.textLabel.text = cellText;
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)sender numberOfRowsInSection:(NSInteger)section {
     return [self.scores count];
+    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.scores=self.appDataModel.scoreBoard;
+   
     
     
 }

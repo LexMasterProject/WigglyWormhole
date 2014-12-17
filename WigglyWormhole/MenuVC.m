@@ -1,4 +1,4 @@
-//
+//full name:WEI Wuhao
 //  MenuVC.m
 //  WigglyWormhole
 //
@@ -22,6 +22,8 @@
     // Do any additional setup after loading the view.
     _appDataModel=[[AppDataModel alloc]init];
     [_appDataModel loadDefaults];
+    
+   
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,7 +37,7 @@
     {
         ScoreBoardVC*vc=[segue destinationViewController];
         vc.delegate=self;
-        vc.appDataModel=self.appDataModel;
+        vc.scores=self.appDataModel.scoreBoard;
     }
     else  if([[segue identifier]isEqualToString:@"goGameVC"])
     {
